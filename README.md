@@ -19,13 +19,13 @@ This repository shares data and code used for paper titled "Sensitivity Analysis
  - **unpacking.sh**: Shell script to unpack resource data per each subject.
 
 ### Understand Features
-We used the results from the [Understnad](https://scitools.com/) tool to extract the metrics for the target code. 
+We used the results from the Understnad tool to extract the metrics for the target code. 
 If you don't have a license of the Understand tool, download the archive file [understand_features](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKRURZc3hvUWxseTA), and extract it into the features directory. 
 To apply this archive, You can find in the replication section.     
         
 ### Subjects ( Bug and Source Code Repository )
-We used the 46 subjects below the table. 
-The subjects classified into 5 groups to manage them. 
+We used the 5 old subjects and 46 new subjects below the table. 
+The subjects classified into 6 groups to manage them (The Previous group is old subjects). 
 Each of the archive contains bug reports, bug report repositories that we made, cloned git repository and metadata of them that we made. 
 
 
@@ -77,7 +77,13 @@ Each of the archive contains bug reports, bug report repositories that we made, 
 | Spring | SPR | [SPR.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKYmlsbkpkVjltN0E) | [https://github.com/spring-projects/spring-framework](https://github.com/spring-projects/spring-framework) |
 | Spring | SWF | [SWF.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKM3VKQVFqakJKUUk) | [https://github.com/spring-projects/spring-webflow](https://github.com/spring-projects/spring-webflow) |
 | Spring | SWS | [SWS.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKYUxaUnpWT2FnVlE) | [https://github.com/spring-projects/spring-ws](https://github.com/spring-projects/spring-ws) |
- 
+| Previous | AspectJ | [AspectJ.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKM3BIamVVal9yN0E) | [https://github.com/eclipse/org.aspectj](https://github.com/eclipse/org.aspectj) |
+| Previous | JDT | [JDT.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKaEMxMkhfTENlZEE) | [https://github.com/eclipse/eclipse.jdt.core](https://github.com/eclipse/eclipse.jdt.core) |
+| Previous | PDE | [PDE.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKakdfRWE1ZFFISDA) | [https://github.com/eclipse/eclipse.pde.ui](https://github.com/eclipse/eclipse.pde.ui) |
+| Previous | SWT | [SWT.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKVlpTMG9OOVk4WWM) | [https://github.com/eclipse/eclipse.platform.swt](https://github.com/eclipse/eclipse.platform.swt) |
+| Previous | ZXing | [ZXing.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKd2RfaFVUb1NOQjQ) | [https://github.com/zxing/zxing](https://github.com/zxing/zxing) |
+
+
 
 
 # Replication
