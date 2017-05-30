@@ -136,7 +136,6 @@ All the experiments are executed in Ubuntu 16.04 LTS.
 > $ sudo apt-get update <br />
 > $ sudo apt-get install python2.7 python <br />
 > $ sudo apt-get install python-pip <br />
->  <br />
 
 
 ### Install python libraries
@@ -147,11 +146,9 @@ All the experiments are executed in Ubuntu 16.04 LTS.
 
 ### Preparing resources 
 * Clone the repository by using the following command. (We cloned into the "IRBL" directory.)
-> <br />
 > $ sudo apt-get update <br />
 > $ sudo apt-get install git <br />
 > $ git clone https://github.com/irblsensitivity/irblsensitivity.git IRBL <br />
-> <br />
     
 * Download subjects' archives.
     - Download all subjects from the Subjects table and save them in the cloned repository path 
@@ -180,25 +177,19 @@ All the experiments are executed in Ubuntu 16.04 LTS.
     - Since the provided archives have only a git repository, you need to inflate also.
     - The version information that needs to inflate exists in the Python script and provided archives.
     - The information for the inflation are in the provided scripts and archives. See a file versions.txt in any subject's data directory.
-> <br />
 > IRBL$ cd scripts <br />
 > IRBL/scripts$ python launch_GitInflator.py <br />
-> <br />
     
 * Build bug repositories
     - We need to build a repository for the bug reports with pre-crawled bug reports.
     - We are already providing the result of this works in provided subject's archives.
     
-> <br />
 > IRBL/scripts$ python launcher_repoMaker.py <br />
 > IRBL/scripts$ python launcher_DupRepo.py <br />
-> <br />
     
 * Update count information of bug and source codes.
     - The script of Counting.py makes a count information for bug and source code. 
-> <br />
 > IRBL/scripts$ python Counting.py <br />
-> <br />
     
 
 ### Feature Extraction
@@ -217,7 +208,6 @@ All the experiments are executed in Ubuntu 16.04 LTS.
        $ tar -xzf understand_features.tar.gz -C IRBL/features <br />
 
 
-> <br />
 > IRBL/scripts$ python features/BugFeatures.py <br />
 > IRBL/scripts$ python features/BugCorpus.py <br />
 > IRBL/scripts$ python features/SourceFeatures.py <br />
@@ -226,7 +216,6 @@ All the experiments are executed in Ubuntu 16.04 LTS.
 > IRBL/scripts$ python combine_features/SummaryBugFeatures.py <br />
 > IRBL/scripts$ python combine_features/SummaryCodeFeatures.py <br />
 > IRBL/scripts$ python combine_features/SummaryDuplicatesBugFeatures.py <br />
-> <br />
 
 ### Execute Techniques
 * Preparing step
@@ -250,10 +239,7 @@ All the experiments are executed in Ubuntu 16.04 LTS.
 
 
 * Examples
-> <br />
 > IRBL/scripts$ python launcher_Tool.py -w NewData <br />
 > IRBL/scripts$ python launcher_Tool.py -w NewDataSingle -s <br />
 > IRBL/scripts$ python launcher_Tool.py -w NewData_Locus -t Locus <br />
 > IRBL/scripts$ python launcher_Tool.py -w NewData_CAMLE -g Apache -p CAMEL <br />
-> <br />
-    
