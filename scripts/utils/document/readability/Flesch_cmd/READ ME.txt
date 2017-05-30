@@ -1,0 +1,12 @@
+Flesh 2.0 Multi-Platform Release: Command Line Version
+
+Requires Java 1.5+
+
+Run with:
+java -jar CmdFlesh.jar [fileName]
+    to process [fileName]
+    
+    -or-
+    
+java -jar CmdFlesh.jar  
+    to process input read from standard input
