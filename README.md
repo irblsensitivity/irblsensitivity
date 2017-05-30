@@ -19,12 +19,14 @@ This repository shares data and code used for paper titled "Sensitivity Analysis
  - **unpacking.sh**: Shell script to unpack resource data per each subject.
 
 ### Understand Features
-We use the results from the Understnad Tool when extracting the metrics for the source code. If you don't have a license of the Understand Tool, download the archive file [understand_features](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKRURZc3hvUWxseTA), and extract it into the features directory. To know the detail use this archive, see the replication section.     
+We used the results from the Understnad tool to extract the metrics for the target code. 
+If you don't have a license of the Understand tool, download the archive file [understand_features](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKRURZc3hvUWxseTA), and extract it into the features directory. 
+To apply this archive, You can find in the replication section.     
         
 ### Subjects ( Bug and Source Code Repository )
 We used the 46 subjects below the table. 
-They classified into 5 groups to manage them. 
-The archives of each subject contain bug reports, bug report repository that we made, cloned git repository and metadata for them. 
+The subjects classified into 5 groups to manage them. 
+Each of the archive contains bug reports, bug report repositories that we made, cloned git repository and metadata of them that we made. 
 
 
 | Group                  | Subject | Archive       | Git Repository                           |
@@ -82,11 +84,12 @@ The archives of each subject contain bug reports, bug report repository that we 
 All the experiments are executed in Ubuntu 16.04 LTS.
 
 ### Install indri
-- To execute BLUiR and AmaLgam, you need to install indri using following commands.
-- I selected indri-5.6 version because upper versions couldn't compile. (if you can compile the upper version, I think that is better)
-- In the process of installing, memorize the path in the first line in the "make install" log. <br />
+- To execute BLUiR and AmaLgam, you need to install indri.
+- Since there are compile problems, we chose indri-5.6 version. (if you can compile the upper version, I think that is better)
+- In the installing process, please memorize the path in the first line in the "make install" log. <br />
 (In my case, /usr/local/bin.  This is the installed path of indri)
 - And then, Change Settings.txt file.
+- Command to install indri
 > // Install g++ and make for indri <br />
 > $ sudo add-apt-repository ppa:ubuntu-toolchain-r/test <br />
 > $ sudo apt-get update <br />
@@ -114,8 +117,8 @@ All the experiments are executed in Ubuntu 16.04 LTS.
 >    indripath=/usr/local/bin/ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<-- edit this value as a the first log of "make install" <br />
 
 ### Install java and python
-* We used java8 and python2.7
-* If your system has already installed, skip this section.
+* We used java 8 and python 2.7
+* If you have java and python in your computer, please skip this section.
 > // install java <br />
 > $ sudo apt-get install python-software-properties <br />
 > $ sudo add-apt-repository ppa:webupd8team/java <br />
@@ -137,17 +140,18 @@ All the experiments are executed in Ubuntu 16.04 LTS.
 
 
 ### Preparing resources 
-* Clone this repository.
-
+* Clone the repository by using the following command. (We cloned the "IRBL" directory.)
 > <br />
+> $ sudo apt-get update <br />
+> $ sudo apt-get install git <br />
 > $ git clone https://github.com/irblsensitivity/irblsensitivity.git IRBL <br />
 > <br />
     
 * Download subjects' archives.
-    - Download all subjects from the above table and save them in the cloned repository path 
-    - In my case, save it to the _archives directory.
-    - Each subject should be stored in folders according to the group to which they belong.
-    - Finally, unpacking all archives using the script unpacking.sh.
+    - Download all subjects from the Subjects table and save them in the cloned repository path 
+    - In our case, we save it to the IRBL/_archives directory.
+    - Each subject must be stored in the group directory to which it belongs.
+    - Finally, unpacking all archives by using the unpacking.sh script.
 > $ cd IRBL <br />
 > IRBL$ mkdir _archives <br />
 > IRBL$ cd _archives <br />
@@ -160,12 +164,12 @@ All the experiments are executed in Ubuntu 16.04 LTS.
 
     
 * Update PATH information.
-    - In the scripts/commons/Subject.py file, There is resource PATH information as a string.
+    - In the file scripts/commons/Subject.py, there is a resource PATH information as a string.
     - The variables are Subjects.root, Subjects.root_result, and Subjects.root_feature.
-    - You should change the values according to cloned path of IRBL repository.
+    - You should change the variables according to cloned path of IRBL repository.
 
 * Inflate the source codes.
-    - We used multiple version of source code for our experiment.
+    - We used multiple versions of source code for the experiment.
     - Because the provided subjects have an only git repository, you need to checkout and copy it for each version that is used in our experiment.
     - The information that needs to inflate versions exists in the source code and provided subject archives.
     See a file versions.txt in any subject's data folder.
@@ -176,8 +180,8 @@ All the experiments are executed in Ubuntu 16.04 LTS.
     
     
 * Make bug repositories
-    - Make repository files from crawled bug reports
-    - We already provide the result of this works in provided subject's archive.
+    - We need to build repository files from crawled bug reports.
+    - We are already providing the result of this works in provided subject's archives.
     
 > <br />
 > IRBL/scripts$ python launcher_repoMaker.py <br />
@@ -191,20 +195,20 @@ All the experiments are executed in Ubuntu 16.04 LTS.
 > <br />
     
 
-
 ### Feature Extraction
-* To make data for analysis, you should extract features from bug and source codes.
+* To make data for analysis, you should extract features from bug reports and source codes.
 * Use the scripts in scripts/features and scripts/combined_features.
 * They should be executed in the following order.
     - BugFeatures--> BugCorpus 
     - SourceFeatures --> SourceCorpus --> MethodFeatures
     - SummaryBugFeatures --> SummaryCodeFeatures --> SummaryDuplicatesBugFeatures
-* When you execute SourceFeatures, you need Understand Tool.
-* If you don't have a license of Understand Tool, use provided results that can download from [understand_features](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKRURZc3hvUWxseTA).
-    - Download the file to the place that you want. <br />
-    - Extract the compressed archive into the "features" directory <br />
+* When you execute SourceFeatures, you need Understand tool. 
+  If you don't have a license of Understand or want to use provided data, 
+  please do following steps. 
+    - Download the file to a directory you want. ([understand_features](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKRURZc3hvUWxseTA))<br />
+    - Extract the compressed archive into the directory, "features".<br />
       This "features" directory should be same as Subjects.root_feature <br />
-       $ tar xzf understand_features.tar.gz -C ~/IRBL/features <br />
+       $ tar xzf understand_features.tar.gz -C IRBL/features <br />
 
 
 > <br />
@@ -240,9 +244,9 @@ All the experiments are executed in Ubuntu 16.04 LTS.
     - -m: If this option is specified, Use merged repository of duplicated bug.
 * Examples
 > <br />
-> IRBL/scripts$ python launcher_Tool.py -w NewData <br />
-> IRBL/scripts$ python launcher_Tool.py -w NewDataSingle -s <br />
-> IRBL/scripts$ python launcher_Tool.py -w NewData_Locus -t Locus <br />
-> IRBL/scripts$ python launcher_Tool.py -w NewData_CAMLE -g Apache -p CAMEL <br />
+> IRBL/scripts$ python launcher_Tool.py -w NewData
+> IRBL/scripts$ python launcher_Tool.py -w NewDataSingle -s
+> IRBL/scripts$ python launcher_Tool.py -w NewData_Locus -t Locus
+> IRBL/scripts$ python launcher_Tool.py -w NewData_CAMLE -g Apache -p CAMEL
 > <br />
     
