@@ -192,8 +192,8 @@ def work():
 			obj.run(group, project)
 
 if __name__ == "__main__":
-	clear(True)
-	#work()
+	#clear(True)
+	work()
 	pass
 
 

@@ -6,10 +6,8 @@ Updated on 2017. 02. 12
 from __future__ import print_function
 
 import os
-
 import matplotlib
 from scipy import stats
-
 from commons import DataLoader
 from commons import Subjects
 from commons import VersionUtil
@@ -17,6 +15,7 @@ from results import XLSbasic
 
 # Force matplotlib to not use any Xwindows backend.
 matplotlib.use('Agg')
+
 
 class KSTester(DataLoader):
 	__name__ = u'ProjectTFDist'

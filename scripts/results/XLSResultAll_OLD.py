@@ -248,7 +248,7 @@ class XLSResultAllOLD(XLSbasic):
 	#######################################################################
 
 	def get_countings(self, _group, _project, _tech):
-		from repository.Counting import Counting
+		from Counting import Counting
 		counter = Counting()
 		if _tech == u'BLIA' and _project in [u'AspectJ', u'SWT', u'ZXing']:
 			filename = u'BLIA_repository.xml'

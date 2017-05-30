@@ -6,7 +6,7 @@ from xml.etree import ElementTree
 
 from commons import Subjects
 from commons import VersionUtil
-from utils.PrettyStringBuilder import PrettyStringBuilder
+from utils import PrettyStringBuilder
 from utils import Progress
 
 
