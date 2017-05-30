@@ -21,7 +21,7 @@ This repository is for the paper titled "Sensitivity Analysis of IR-based Bug Lo
 We used the results from the Understnad Tool when extracting the metrics for the source code. If you don't have a license of the Understand Tool, download the archive file [understand_features](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKRURZc3hvUWxseTA), and extract it into the features directory. To know the detail use this archive, see the replication section.     
         
 ### Subjects ( Bug and Source Code Repository )
-We use the 46 subjects below the table. 
+We used the 46 subjects below the table. 
 They classified into 5 groups to manage them. 
 The archives of each subject contain bug reports, bug report repository that we made, cloned git repository and metadata for them. 
 
