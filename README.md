@@ -1,24 +1,25 @@
 # Overview
-This repository is for the paper titled "Sensitivity Analysis of IR-based Bug Localization Techniques". 
+This repository shares data and code used for paper titled "Sensitivity Analysis of IR-based Bug Localization Techniques". 
+
 
 ### Repository Description
- - **analysis** : The data for "scripts > Experiments > analysis" scripts.
- - **techniques** : Previous techniques, we made it to output common result.
-    * releases : The executable files for each technique.
- - **scripts** : Python scripts used for the paper.
-    * repository : Scripts to prepare the resources to execute each technique.
-    * results : Scripts to collect the execution results of each technique and export to Excel.
-    * analysis : Scripts to analysis for the result of each technique and features extracted from resources. <br /> 
+ - **analysis**: The data for "scripts > Experiments > analysis" scripts.
+ - **techniques**: Previous techniques, we made it to output common result.
+    * releases: The executable files for each technique.
+ - **scripts**: Python scripts used for the paper.
+    * repository: Scripts to prepare the resources to execute each technique.
+    * results: Scripts to collect the execution results of each technique and export to Excel.
+    * analysis: Scripts to analysis for the result of each technique and features extracted from resources. <br /> 
     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;We applied Mann-Whitney U test, Pearson correlation and so on.
-    * combine_features : Scripts to extract features from data combining bug report and source code.
-    * features : Scripts to extract features from bug report and source code.
-    * commons : Scripts to managing subjects and common functions.
-    * utils : Personal libraries for experiments.
- - **packing.sh** : Shell script to pack resource data per each subject.
- - **unpacking.sh** : Shell script to unpack resource data per each subject.
+    * combine_features: Scripts to extract features from data combining bug report and source code.
+    * features: Scripts to extract features from bug report and source code.
+    * commons: Scripts to managing subjects and common functions.
+    * utils: Personal libraries for experiments.
+ - **packing.sh**: Shell script to pack resource data per each subject.
+ - **unpacking.sh**: Shell script to unpack resource data per each subject.
 
 ### Understand Features
-We used the results from the Understnad Tool when extracting the metrics for the source code. If you don't have a license of the Understand Tool, download the archive file [understand_features](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKRURZc3hvUWxseTA), and extract it into the features directory. To know the detail use this archive, see the replication section.     
+We use the results from the Understnad Tool when extracting the metrics for the source code. If you don't have a license of the Understand Tool, download the archive file [understand_features](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKRURZc3hvUWxseTA), and extract it into the features directory. To know the detail use this archive, see the replication section.     
         
 ### Subjects ( Bug and Source Code Repository )
 We used the 46 subjects below the table. 
@@ -216,3 +217,33 @@ All the experiments are executed in Ubuntu 16.04 LTS.
 > IRBL/scripts$ python combine_features/SummaryCodeFeatures.py <br />
 > IRBL/scripts$ python combine_features/SummaryDuplicatesBugFeatures.py <br />
 > <br />
+
+### Execute Techniques
+* Preparing
+    - You need to set the PATH information and JavaOptions in the launcher_Tool.py file.
+    - Open the file and check the following variables 
+    - ProgramPATH: Set the release files of techniques (ex. u'~/IRBL/techniques/releases/')
+	- OutputPATH: Set the result path to save output of each technique (ex. u'~/IRBL/expresults/')
+	- JavaOptions: Set the java command options. (ex. '-Xms512m -Xmx4000m')
+	- JavaOptions_Locus: Set the java options what you want (ex. '-Xms512m -Xmx4000m')
+* To get the result of each technique, you can use scripts/launcher_Tool.py.
+* The script execute 6 techniques for all subjects.
+* The script basically works with multiple versions of source code and bug repository. 
+* Options
+    - -w <work name> : \[nessessary\] The directory name that stores the results of technique. If the name starts with "Old", this script works with previous data,  otherwise works with new data.
+    - -g <group name>: The specific group. When you use this option, the script works with subjects in the specified group. 
+    - -p <subject name>: The specific subject. To use this option, you should specify the group name according to this subject. 
+    - -t <technique name>: The specific technique. When you use this option, the script makes results of specified technique.
+    - -v <version name>: The specific version. When you use this option, the script works with the specified version of source code.
+    - -s : Single version mode, If this option used, the script works with only latest source code.
+    - -d : If this option is specified, the script works with latest source code and each version of bug repository. This option is for the single version mode.
+    - -m : If this option is specified, Use merged repository of duplicated bug.
+* Examples
+> <br />
+> IRBL/scripts$ python launcher_Tool.py -w NewData
+> IRBL/scripts$ python launcher_Tool.py -w NewDataSingle -s
+> IRBL/scripts$ python launcher_Tool.py -w NewData1 -t Locus
+> IRBL/scripts$ python launcher_Tool.py -w NewData2 -g Apache
+> IRBL/scripts$ python launcher_Tool.py -w NewData
+> <br />
+    
