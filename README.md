@@ -1,28 +1,32 @@
 # Overview
-This repository is for the paper titled "Sensitivity Analysis of IR-based Bug Localization Techniques" 
+This repository is for the paper titled "Sensitivity Analysis of IR-based Bug Localization Techniques". 
 
 ### Repository Description
  - **analysis** : The data for "scripts > Experiments > analysis" scripts.
  - **techniques** : Previous techniques, we made it to output common result.
-    * releases : The executable files for techniques
- - **scripts** : Python scripts used for the paper
-    * repository : Scripts to prepare the resources to execute each technique
-    * results : Scripts to collect the execution results of each technique and export to Excel
-    * analysis : Scripts to analysis for the result of each technique and features extracted from resources. We apply Mann-Whitney U test, Pearson correlation and so on.
-    * combine_features : Scripts to extract features from data combining bug report and source code
-    * features : Scripts to extract features from bug report and source code
-    * commons : Scripts to managing subjects
-    * utils : Common utils
- - **packing.sh** : Shell script to pack resource data per each subject
- - **unpacking.sh** : Shell script to unpack resource data per each subject
+    * releases : The executable files for each technique.
+ - **scripts** : Python scripts used for the paper.
+    * repository : Scripts to prepare the resources to execute each technique.
+    * results : Scripts to collect the execution results of each technique and export to Excel.
+    * analysis : Scripts to analysis for the result of each technique and features extracted from resources. <br /> 
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;We applied Mann-Whitney U test, Pearson correlation and so on.
+    * combine_features : Scripts to extract features from data combining bug report and source code.
+    * features : Scripts to extract features from bug report and source code.
+    * commons : Scripts to managing subjects and common functions.
+    * utils : Personal libraries for experiments.
+ - **packing.sh** : Shell script to pack resource data per each subject.
+ - **unpacking.sh** : Shell script to unpack resource data per each subject.
 
 ### Understand Features
-We use the results from the Understnad Tool when extracting the metric for the source code. If you don't have a license of the Understand Tool, download the archive file [understand_features](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKRURZc3hvUWxseTA), and unzip it into the features directory. To know the detail use this archive, see the replication section.     
+We used the results from the Understnad Tool when extracting the metrics for the source code. If you don't have a license of the Understand Tool, download the archive file [understand_features](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKRURZc3hvUWxseTA), and extract it into the features directory. To know the detail use this archive, see the replication section.     
         
-### Download Subjects ( Bug and Source Repository )
-We use the 46 subjects below. 
+### Subjects ( Bug and Source Code Repository )
+We use the 46 subjects below the table. 
+They classified into 5 groups to manage them. 
+The archives of each subject contain bug reports, bug report repository that we made, cloned git repository and metadata for them. 
 
-| Group                  | Subject | Repository Download    | Git Repository                           |
+
+| Group                  | Subject | Archive       | Git Repository                           |
 |:-----------------------|:--------|:-----------------------|:-----------------------------------------|
 | Apache | CAMEL | [CAMEL.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKdEZZZnJrWmZxWjg) | [https://github.com/apache/camel.git](https://github.com/apache/camel.git) |
 | Apache | HBASE | [HBASE.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKSlZHQWhJRl96Z1U) | [https://github.com/apache/hbase.git](https://github.com/apache/hbase.git) |
@@ -75,10 +79,12 @@ We use the 46 subjects below.
 
 # Replication
 
+
 ### Install indri
-- To execute BLUiR and AmaLgam, you need to install indri following commands.
+- To execute BLUiR and AmaLgam, you need to install indri using following commands.
 - I selected indri-5.6 version because upper versions couldn't compile. (if you can compile the upper version, I think that is better)
-- The end of the installation, memorize the path in the first line in the "make install" log. (In my case, /usr/local/bin.  This is installed indri path)
+- In the process of installing, memorize the path in the first line in the "make install" log. <br />
+(In my case, /usr/local/bin.  This is the installed path of indri)
 - And then, Change Settings.txt file.
 > // Install g++ and make for indri <br />
 > $ sudo add-apt-repository ppa:ubuntu-toolchain-r/test <br />
@@ -107,8 +113,8 @@ We use the 46 subjects below.
 >    indripath=/usr/local/bin/ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<-- edit this value as a the first log of "make install" <br />
 
 ### Install java and python
-* I used java8 and python2.7
-* If your system have already installed, skip this section.
+* We used java8 and python2.7
+* If your system has already installed, skip this section.
 > // install java <br />
 > $ sudo apt-get install python-software-properties <br />
 > $ sudo add-apt-repository ppa:webupd8team/java <br />
@@ -130,15 +136,15 @@ We use the 46 subjects below.
 
 
 ### Preparing resources 
-* Clone this repositoy
+* Clone this repository.
 
 > <br />
 > $ git clone https://github.com/irblsensitivity/irblsensitivity.git IRBL <br />
 > <br />
     
-* Download subjects 
-    - Doanload all subjects from the above table and save them in the cloned repository path 
-    - In my case, save it to _archives directory.
+* Download subjects' archives.
+    - Download all subjects from the above table and save them in the cloned repository path 
+    - In my case, save it to the _archives directory.
     - Each subject should be stored in folders according to the group to which they belong.
     - Finally, unpacking all archives using the script unpacking.sh.
 > $ cd IRBL <br />
@@ -152,31 +158,33 @@ We use the 46 subjects below.
 > IRBL$ ./unpacking.sh _archives data <br />
 
     
-* Update PATH information
-    - In the scripts/commons/Subject.py file, There resource PATH information as a string.
+* Update PATH information.
+    - In the scripts/commons/Subject.py file, There is resource PATH information as a string.
     - The variables are Subjects.root, Subjects.root_result, and Subjects.root_feature.
-    - You should change the values according to irbl repository path that cloned.
+    - You should change the values according to cloned path of IRBL repository.
 
-* Inflating the source codes
-    - We used multiple version of source code for experiment.
-    - Because the provided subjects have only git repository, you need to checkout and copy it for each version that is used in our experiment.
-    - The information that needs to inflate versions exists in the source code and provided subject archives. <br />
-       See a file versions.txt in any subject's data folder
+* Inflate the source codes.
+    - We used multiple version of source code for our experiment.
+    - Because the provided subjects have an only git repository, you need to checkout and copy it for each version that is used in our experiment.
+    - The information that needs to inflate versions exists in the source code and provided subject archives.
+    See a file versions.txt in any subject's data folder.
 > <br />
 > IRBL$ cd scripts <br />
 > IRBL/scripts$ python launch_GitInflator.py <br />
 > <br />
     
     
-* Make bug repository
-    - The works already done in provided subjects.
+* Make bug repositories
+    - Make repository files from crawled bug reports
+    - We already provide the result of this works in provided subject's archive.
+    
 > <br />
 > IRBL/scripts$ python launcher_repoMaker.py <br />
 > IRBL/scripts$ python launcher_DupRepo.py <br />
 > <br />
     
-* Update count information of bug and source codes
-    - The script of Counting.py make a count information for bug and source code. 
+* Update count information of bug and source codes.
+    - The script of Counting.py makes a count information for bug and source code. 
 > <br />
 > IRBL/scripts$ python Counting.py <br />
 > <br />
@@ -184,16 +192,16 @@ We use the 46 subjects below.
 
 
 ### Feature Extraction
-* To make data for analysis, you should extract features from bug and source codes
-* Use the scripts in scripts/features and scripts/combined_features
-* They should be executed in following order
+* To make data for analysis, you should extract features from bug and source codes.
+* Use the scripts in scripts/features and scripts/combined_features.
+* They should be executed in the following order.
     - BugFeatures--> BugCorpus 
     - SourceFeatures --> SourceCorpus --> MethodFeatures
     - SummaryBugFeatures --> SummaryCodeFeatures --> SummaryDuplicatesBugFeatures
-* When you execute SourceFeatures, you need to Understand Tools.
+* When you execute SourceFeatures, you need Understand Tool.
 * If you don't have a license of Understand Tool, use provided results that can download from [understand_features](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKRURZc3hvUWxseTA).
     - Download the file to the place that you want. <br />
-    - Extracting the a compressed archive to "features" directory <br />
+    - Extract the compressed archive into the "features" directory <br />
       This "features" directory should be same as Subjects.root_feature <br />
        $ tar xzf understand_features.tar.gz -C ~/IRBL/features <br />
 
