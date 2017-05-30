@@ -80,76 +80,70 @@ We use the 46 subjects below.
 - I selected indri-5.6 version because upper versions couldn't compile. (if you can compile the upper version, I think that is better)
 - The end of the installation, memorize the path in the first line in the "make install" log. (In my case, /usr/local/bin.  This is installed indri path)
 - And then, Change Settings.txt file.
-
-
-    // Install g++ and make for indri
-    $ sudo add-apt-repository ppa:ubuntu-toolchain-r/test
-    $ sudo apt-get update
-    $ sudo apt-get install g++
-    $ sudo apt-get install make
-    $ sudo apt-get install --reinstall zlibc zlib1g zlib1g-dev
-    
-    // download and install indri
-    $ wget https://downloads.sourceforge.net/project/lemur/lemur/indri-5.6/indri-5.6.tar.gz
-    $ tar -xvf indri-5.6.tar.gz
-    $ cd indri-5.6
-    $ ./configure
-    $ make
-    $ make install
-       /usr/bin/install -c -m 755 -d /usr/local/bin
-       /usr/bin/install -c -m 755 -d /usr/local/include
-       /usr/bin/install -c -m 755 -d /usr/local/include/indri
-       ...
-       ...
-       /usr/bin/install -c -m 644 Makefile.app /usr/local/share/indri
-    
-    // changeSettings.txt file
-    $ cd ~/irblsensitivity/techniques/releases      # We assume you cloned our repository to 
-    $ vi Settings.txt
-       indripath=/usr/local/bin/   <-- edit this value as a the first log of "make install"
+> // Install g++ and make for indri <br />
+> $ sudo add-apt-repository ppa:ubuntu-toolchain-r/test <br />
+> $ sudo apt-get update <br />
+> $ sudo apt-get install g++ <br />
+> $ sudo apt-get install make <br />
+> $ sudo apt-get install --reinstall zlibc zlib1g zlib1g-dev <br />
+> <br />
+> // download and install indri <br />
+> $ wget https://downloads.sourceforge.net/project/lemur/lemur/indri-5.6/indri-5.6.tar.gz <br />
+> $ tar -xvf indri-5.6.tar.gz <br />
+> $ cd indri-5.6 <br />
+> $ ./configure <br />
+> $ make <br />
+> $ make install <br />
+>    /usr/bin/install -c -m 755 -d /usr/local/bin <br />
+>    /usr/bin/install -c -m 755 -d /usr/local/include <br />
+>    /usr/bin/install -c -m 755 -d /usr/local/include/indri <br />
+>    ... <br />
+>    ... <br />
+>    /usr/bin/install -c -m 644 Makefile.app /usr/local/share/indri <br />
+>  <br />
+> // changeSettings.txt file <br />
+> $ cd ~/irblsensitivity/techniques/releases &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// We assume you cloned our repository to  <br />
+> $ vi Settings.txt
+>    indripath=/usr/local/bin/ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<-- edit this value as a the first log of "make install" <br />
 
 ### Install java and python
 * I used java8 and python2.7
 * If your system have already installed, skip this part after only checking the python dependencies
-
-
-    // install java
-    $ sudo apt-get install python-software-properties
-    $ sudo add-apt-repository ppa:webupd8team/java
-    $ sudo apt-get update
-    $ sudo apt-get install oracle-java8-installer
-    
-    // install python
-    $ sudo add-apt-repository ppa:fkrull/deadsnakes
-    $ sudo apt-get update
-    $ sudo apt-get install python2.7 python
-    $ sudo apt-get install python-pip
-    
-    // install python dependencies
-    $ pip install numpy scipy matplotlib pytz GitPython bs4 xlswriter nltk
-    $ python -m nltk.downloader all     // NLTK Data download. Reference : http://www.nltk.org/data.html
+> // install java <br />
+> $ sudo apt-get install python-software-properties <br />
+> $ sudo add-apt-repository ppa:webupd8team/java <br />
+> $ sudo apt-get update <br />
+> $ sudo apt-get install oracle-java8-installer <br />
+>  <br />
+> // install python <br />
+> $ sudo add-apt-repository ppa:fkrull/deadsnakes <br />
+> $ sudo apt-get update <br />
+> $ sudo apt-get install python2.7 python <br />
+> $ sudo apt-get install python-pip <br />
+>  <br />
+> // install python dependencies <br />
+> $ pip install numpy scipy matplotlib pytz GitPython bs4 xlswriter nltk <br />
+> $ python -m nltk.downloader all &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // NLTK Data download. Reference : http://www.nltk.org/data.html <br />
 
 
 ### Preparing resources 
 * Clone this repositoy
 
-
-    $ git clone https://github.com/irblsensitivity/irblsensitivity.git IRBL
-    
+> <br />
+> $ git clone https://github.com/irblsensitivity/irblsensitivity.git IRBL <br />
+> <br />
     
 * Download subjects from the table in section of Download Subjects and save them to in the cloned repository path (In my case, save it to _archives directory).
-
-    
-    $ git clone https://github.com/irblsensitivity/irblsensitivity.git IRBL
-    $ cd IRBL
-    IRBL$ mkdir _archives
-    IRBL$ cd _archives
-    IRBL/_archives$ mkdir Apache 
-    IRBL/_archives$ cd Apache
-    IRBL/_archives/Apache$ wget -O CAMEL.tar "https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKdEZZZnJrWmZxWjg"
-    ....work recursively....
-    IRBL$ mkdir data
-    IRBL$ ./unpacking.sh _archives data
+> $ git clone https://github.com/irblsensitivity/irblsensitivity.git IRBL <br />
+> $ cd IRBL <br />
+> IRBL$ mkdir _archives <br />
+> IRBL$ cd _archives <br />
+> IRBL/_archives$ mkdir Apache <br /> 
+> IRBL/_archives$ cd Apache <br />
+> IRBL/_archives/Apache$ wget -O CAMEL.tar "https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKdEZZZnJrWmZxWjg" <br />
+> ....work recursively.... <br />
+> IRBL$ mkdir data <br />
+> IRBL$ ./unpacking.sh _archives data <br />
 
     
 * Update PATH information
@@ -158,15 +152,13 @@ We use the 46 subjects below.
 * Inflating the source codes
     - We used multiple version of source code for experiment.
     - Because the provided subjects has only git repository, you need to check out and copy for each version that is used in experiment.
-
-    
-    IRBL$ cd scripts
-    IRBL/scripts$ python launch_GitInflator.py
-    
-    IRBL/_archives/Apache$ wget -O CAMEL.tar "https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKdEZZZnJrWmZxWjg"
-    ....work recursively....
-    IRBL$ mkdir data
-    IRBL$ ./unpacking.sh _archives data
+> IRBL$ cd scripts <br />
+> IRBL/scripts$ python launch_GitInflator.py <br />
+> <br /> 
+> IRBL/_archives/Apache$ wget -O CAMEL.tar "https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKdEZZZnJrWmZxWjg" <br />
+> ....work recursively.... <br />
+> IRBL$ mkdir data <br />
+> IRBL$ ./unpacking.sh _archives data <br />
     
     
 * Make bug repository
@@ -178,5 +170,4 @@ We use the 46 subjects below.
 ### Feature Extraction
 features : BugFeatures--> BugCorpus --> SourceFeatures --> SourceCorpus --> MethodFeatures
 combine_features : SummaryBugFeatures --> SummaryCodeFeatures --> SummaryDuplicatesBugFeatures
-
 
