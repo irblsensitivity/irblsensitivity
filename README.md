@@ -225,25 +225,24 @@ All the experiments are executed in Ubuntu 16.04 LTS.
     - ProgramPATH: Set the release files of techniques (ex. u'~/IRBL/techniques/releases/')
 	- OutputPATH: Set the result path to save output of each technique (ex. u'~/IRBL/expresults/')
 	- JavaOptions: Set the java command options. (ex. '-Xms512m -Xmx4000m')
-	- JavaOptions_Locus: Set the java options what you want (ex. '-Xms512m -Xmx4000m')
+	- JavaOptions_Locus: Set the java options for Locus. Because Locus need a large memory, we separate the option. (ex. '-Xms512m -Xmx4000m')
 * To get the result of each technique, you can use scripts/launcher_Tool.py.
 * The script execute 6 techniques for all subjects.
 * The script basically works with multiple versions of source code and bug repository. 
 * Options
-    - -w <work name> : \[nessessary\] The directory name that stores the results of technique. If the name starts with "Old", this script works with previous data,  otherwise works with new data.
+    - -w <work name>: \[nessessary\] The directory name that stores the results of technique. If the name starts with "Old", this script works with previous data,  otherwise works with new data.
     - -g <group name>: The specific group. When you use this option, the script works with subjects in the specified group. 
     - -p <subject name>: The specific subject. To use this option, you should specify the group name according to this subject. 
     - -t <technique name>: The specific technique. When you use this option, the script makes results of specified technique.
     - -v <version name>: The specific version. When you use this option, the script works with the specified version of source code.
-    - -s : Single version mode, If this option used, the script works with only latest source code.
-    - -d : If this option is specified, the script works with latest source code and each version of bug repository. This option is for the single version mode.
-    - -m : If this option is specified, Use merged repository of duplicated bug.
+    - -s: Single version mode, If this option used, the script works with only latest source code.
+    - -d: If this option is specified, the script works with latest source code and each version of bug repository. This option is for the single version mode.
+    - -m: If this option is specified, Use merged repository of duplicated bug.
 * Examples
 > <br />
-> IRBL/scripts$ python launcher_Tool.py -w NewData
-> IRBL/scripts$ python launcher_Tool.py -w NewDataSingle -s
-> IRBL/scripts$ python launcher_Tool.py -w NewData1 -t Locus
-> IRBL/scripts$ python launcher_Tool.py -w NewData2 -g Apache
-> IRBL/scripts$ python launcher_Tool.py -w NewData
+> IRBL/scripts$ python launcher_Tool.py -w NewData <br />
+> IRBL/scripts$ python launcher_Tool.py -w NewDataSingle -s <br />
+> IRBL/scripts$ python launcher_Tool.py -w NewData_Locus -t Locus <br />
+> IRBL/scripts$ python launcher_Tool.py -w NewData_CAMLE -g Apache -p CAMEL <br />
 > <br />
     
