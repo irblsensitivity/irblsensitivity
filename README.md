@@ -162,7 +162,7 @@ We use the 46 subjects below.
     - Because the provided subjects have only git repository, you need to checkout and copy it for each version that is used in our experiment.
     - The information that needs to inflate versions exists in the source code and provided subject archives. <br />
        See a file versions.txt in any subject's data folder
-    
+> <br />
 > IRBL$ cd scripts <br />
 > IRBL/scripts$ python launch_GitInflator.py <br />
 > <br />
@@ -170,17 +170,41 @@ We use the 46 subjects below.
     
 * Make bug repository
     - The works already done in provided subjects.
+> <br />
+> IRBL/scripts$ python launcher_repoMaker.py <br />
+> IRBL/scripts$ python launcher_DupRepo.py <br />
+> <br />
     
 * Update count information of bug and source codes
     - The script of Counting.py make a count information for bug and source code. 
-> IRBL$ cd scripts <br />
+> <br />
 > IRBL/scripts$ python Counting.py <br />
 > <br />
     
 
 
 ### Feature Extraction
-features : BugFeatures--> BugCorpus --> SourceFeatures --> SourceCorpus --> MethodFeatures
-combine_features : SummaryBugFeatures --> SummaryCodeFeatures --> SummaryDuplicatesBugFeatures
+* To make data for analysis, you should extract features from bug and source codes
+* Use the scripts in scripts/features and scripts/combined_features
+* They should be executed in following order
+    - BugFeatures--> BugCorpus 
+    - SourceFeatures --> SourceCorpus --> MethodFeatures
+    - SummaryBugFeatures --> SummaryCodeFeatures --> SummaryDuplicatesBugFeatures
+* When you execute SourceFeatures, you need to Understand Tools.
+* If you don't have a license of Understand Tool, use provided results that can download from [understand_features](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKRURZc3hvUWxseTA).
+    - Download the file to the place that you want. <br />
+    - Extracting the a compressed archive to "features" directory <br />
+      This "features" directory should be same as Subjects.root_feature <br />
+       $ tar xzf understand_features.tar.gz -C ~/IRBL/features <br />
 
 
+> <br />
+> IRBL/scripts$ python features/BugFeatures.py <br />
+> IRBL/scripts$ python features/BugCorpus.py <br />
+> IRBL/scripts$ python features/SourceFeatures.py <br />
+> IRBL/scripts$ python features/SourceCorpus.py <br />
+> IRBL/scripts$ python features/MethodFeatures.py <br />
+> IRBL/scripts$ python combine_features/SummaryBugFeatures.py <br />
+> IRBL/scripts$ python combine_features/SummaryCodeFeatures.py <br />
+> IRBL/scripts$ python combine_features/SummaryDuplicatesBugFeatures.py <br />
+> <br />
