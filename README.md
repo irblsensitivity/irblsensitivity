@@ -108,7 +108,7 @@ We use the 46 subjects below.
 
 ### Install java and python
 * I used java8 and python2.7
-* If your system have already installed, skip this part after only checking the python dependencies
+* If your system have already installed, skip this section.
 > // install java <br />
 > $ sudo apt-get install python-software-properties <br />
 > $ sudo add-apt-repository ppa:webupd8team/java <br />
@@ -121,6 +121,9 @@ We use the 46 subjects below.
 > $ sudo apt-get install python2.7 python <br />
 > $ sudo apt-get install python-pip <br />
 >  <br />
+
+
+### Install python libraries
 > // install python dependencies <br />
 > $ pip install numpy scipy matplotlib pytz GitPython bs4 xlswriter nltk <br />
 > $ python -m nltk.downloader all &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // NLTK Data download. Reference : http://www.nltk.org/data.html <br />
@@ -133,8 +136,11 @@ We use the 46 subjects below.
 > $ git clone https://github.com/irblsensitivity/irblsensitivity.git IRBL <br />
 > <br />
     
-* Download subjects from the table in section of Download Subjects and save them to in the cloned repository path (In my case, save it to _archives directory).
-> $ git clone https://github.com/irblsensitivity/irblsensitivity.git IRBL <br />
+* Download subjects 
+    - Doanload all subjects from the above table and save them in the cloned repository path 
+    - In my case, save it to _archives directory.
+    - Each subject should be stored in folders according to the group to which they belong.
+    - Finally, unpacking all archives using the script unpacking.sh.
 > $ cd IRBL <br />
 > IRBL$ mkdir _archives <br />
 > IRBL$ cd _archives <br />
@@ -147,27 +153,34 @@ We use the 46 subjects below.
 
     
 * Update PATH information
-    - In the Subject.py file, There are  
+    - In the scripts/commons/Subject.py file, There resource PATH information as a string.
+    - The variables are Subjects.root, Subjects.root_result, and Subjects.root_feature.
+    - You should change the values according to irbl repository path that cloned.
 
 * Inflating the source codes
     - We used multiple version of source code for experiment.
-    - Because the provided subjects has only git repository, you need to check out and copy for each version that is used in experiment.
+    - Because the provided subjects have only git repository, you need to checkout and copy it for each version that is used in our experiment.
+    - The information that needs to inflate versions exists in the source code and provided subject archives. <br />
+       See a file versions.txt in any subject's data folder
+    
 > IRBL$ cd scripts <br />
 > IRBL/scripts$ python launch_GitInflator.py <br />
-> <br /> 
-> IRBL/_archives/Apache$ wget -O CAMEL.tar "https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKdEZZZnJrWmZxWjg" <br />
-> ....work recursively.... <br />
-> IRBL$ mkdir data <br />
-> IRBL$ ./unpacking.sh _archives data <br />
+> <br />
     
     
 * Make bug repository
     - The works already done in provided subjects.
+    
 * Update count information of bug and source codes
-
+    - The script of Counting.py make a count information for bug and source code. 
+> IRBL$ cd scripts <br />
+> IRBL/scripts$ python Counting.py <br />
+> <br />
+    
 
 
 ### Feature Extraction
 features : BugFeatures--> BugCorpus --> SourceFeatures --> SourceCorpus --> MethodFeatures
 combine_features : SummaryBugFeatures --> SummaryCodeFeatures --> SummaryDuplicatesBugFeatures
+
 
