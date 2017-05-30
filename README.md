@@ -24,7 +24,7 @@ If you don't have a license of the Understand tool, download the archive file [u
 To apply this archive, You can find in the replication section.     
         
 ### Subjects ( Bug and Source Code Repository )
-We used the 5 old subjects and 46 new subjects below the table. 
+We used the 5 old subjects and the 46 new subjects in the below table.
 The subjects classified into 6 groups to manage them (The Previous group is old subjects). 
 Each of the archive contains bug reports, bug report repositories that we made, cloned git repository and metadata of them that we made. 
 
