@@ -218,6 +218,7 @@ All the experiments are executed in Ubuntu 16.04 LTS.
 > IRBL/scripts$ python combine_features/SummaryDuplicatesBugFeatures.py <br />
 
 ### Execute Techniques
+* To get the result of each technique, you can use scripts/launcher_Tool.py.
 * Preparing step
     - You need to set the PATHs and JavaOptions in the launcher_Tool.py file.
     - Open the file, launcher_Tool.py and check the following variables 
@@ -225,7 +226,6 @@ All the experiments are executed in Ubuntu 16.04 LTS.
     - OutputPATH: Set the result path to save output of each technique (ex. u'~/IRBL/expresults/')
     - JavaOptions: Set the java command options. (ex. '-Xms512m -Xmx4000m')
     - JavaOptions_Locus: Set the java options for Locus. Because Locus need a large memory, we separated the option. (ex. '-Xms512m -Xmx4000m')
-* To get the result of each technique, you can use scripts/launcher_Tool.py.
 * The script executes 6 techniques for all subjects.
 * The script basically works for the multiple versions of bug repository and each of the related source codes.
 * Options
