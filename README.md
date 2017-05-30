@@ -19,7 +19,7 @@ This repository shares data and code used for paper titled "Sensitivity Analysis
  - **unpacking.sh**: Shell script to unpack resource data per each subject.
 
 ### Understand Features
-We used the results from the Understnad tool to extract the metrics for the target code. 
+We used the results from the [Understnad](https://scitools.com/) tool to extract the metrics for the target code. 
 If you don't have a license of the Understand tool, download the archive file [understand_features](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKRURZc3hvUWxseTA), and extract it into the features directory. 
 To apply this archive, You can find in the replication section.     
         
