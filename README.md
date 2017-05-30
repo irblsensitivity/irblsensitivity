@@ -78,7 +78,7 @@ The archives of each subject contain bug reports, bug report repository that we 
 
 
 # Replication
-
+All the experiments are executed in Ubuntu 16.04 LTS.
 
 ### Install indri
 - To execute BLUiR and AmaLgam, you need to install indri using following commands.
