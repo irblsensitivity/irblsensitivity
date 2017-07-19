@@ -219,12 +219,12 @@ All the experiments are executed in Ubuntu 16.04 LTS.
 
 * Inflate the source codes.
     - We used multiple versions of source code for the experiment. 
-    - The script, launch_GitInflator.py clones a git repositories and inflates it into the multiple versions which are used in the experiment.
+    - The script, launcher_GitInflator.py clones a git repositories and inflates it into the multiple versions which are used in the experiment.
     - Since the provided archives have only a git repository, you need to inflate also.
     - The version information that needs to inflate exists in the Python script and provided archives.
     - The information for the inflation are in the provided scripts and archives. See a file versions.txt in any subject's data directory.
 > IRBL$ cd scripts <br />
-> IRBL/scripts$ python launch_GitInflator.py <br />
+> IRBL/scripts$ python launcher_GitInflator.py <br />
     
 * Build bug repositories
     - We need to build a repository for the bug reports with pre-crawled bug reports.
