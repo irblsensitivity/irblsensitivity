@@ -73,61 +73,6 @@ Each of the archive contains bug reports, bug report repositories that we made, 
 | Spring | SOCIAL | [SOCIAL.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/SOCIAL.tar) | [https://github.com/spring-projects/spring-social](https://github.com/spring-projects/spring-social) |
 | Spring | SOCIALFB | [SOCIALFB.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/SOCIALFB.tar) | [https://github.com/spring-projects/spring-social-facebook](https://github.com/spring-projects/spring-social-facebook) |
 
-| Group                  | Subject | Archive       | Git Repository                           |
-|:-----------------------|:--------|:-----------------------|:-----------------------------------------|
-| Apache | CAMEL | [CAMEL.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKdEZZZnJrWmZxWjg) | [https://github.com/apache/camel.git](https://github.com/apache/camel.git) |
-| Apache | HBASE | [HBASE.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKSlZHQWhJRl96Z1U) | [https://github.com/apache/hbase.git](https://github.com/apache/hbase.git) |
-| Apache | HIVE | [HIVE.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKLTF1N01Zd3UtTWs) | [https://github.com/apache/hive.git](https://github.com/apache/hive.git) |
-| Commons | CODEC | [CODEC.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKeVh5UjF4NXRJQU0) | [https://github.com/apache/commons-codec.git](https://github.com/apache/commons-codec.git) |
-| Commons | COLLECTIONS | [COLLECTIONS.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKTWRmTFIxUEN4dWM) | [https://github.com/apache/commons-collections.git](https://github.com/apache/commons-collections.git) |
-| Commons | COMPRESS | [COMPRESS.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKdXlFUEY2NkQxbUk) | [https://github.com/apache/commons-compress.git](https://github.com/apache/commons-compress.git) |
-| Commons | CONFIGURATION | [CONFIGURATION.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKQTVSRWdGQmdHVzQ) | [https://github.com/apache/commons-configuration.git](https://github.com/apache/commons-configuration.git) |
-| Commons | CRYPTO | [CRYPTO.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKdkZiZTlCRl8xUEE) | [https://github.com/apache/commons-crypto.git](https://github.com/apache/commons-crypto.git) |
-| Commons | CSV | [CSV.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKSlk4aEZZUzFSVDA) | [https://github.com/apache/commons-csv.git](https://github.com/apache/commons-csv.git) |
-| Commons | IO | [IO.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKVkMtN0ZEcWhaNlU) | [https://github.com/apache/commons-io.git](https://github.com/apache/commons-io.git) |
-| Commons | LANG | [LANG.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKMVJKZEllUGVBZVU) | [https://github.com/apache/commons-lang.git](https://github.com/apache/commons-lang.git) |
-| Commons | MATH | [MATH.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKYzU1MWo2cWMxZHc) | [https://github.com/apache/commons-math.git](https://github.com/apache/commons-math.git) |
-| Commons | WEAVER | [WEAVER.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKN085ZGtJTVJ1emc) | [https://github.com/apache/commons-weaver.git](https://github.com/apache/commons-weaver.git) |
-| JBoss | ENTESB | [ENTESB.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKUjc0QjZHTXpxdDA) | [https://github.com/jboss-fuse/fuse.git](https://github.com/jboss-fuse/fuse.git) |
-| JBoss | JBMETA | [JBMETA.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKcW9lc212Umw2Vmc) | [https://github.com/jboss/metadata.git](https://github.com/jboss/metadata.git) |
-| Wildfly | ELY | [ELY.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKbGNqRWZXa0M1MFU) | [https://github.com/wildfly-security/wildfly-elytron.git](https://github.com/wildfly-security/wildfly-elytron.git) |
-| Wildfly | SWARM | [SWARM.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKZk82TWFrUERFckU) | [https://github.com/wildfly-swarm/wildfly-swarm.git](https://github.com/wildfly-swarm/wildfly-swarm.git) |
-| Wildfly | WFARQ | [WFARQ.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKYTBoUU12cGFlckk) | [https://github.com/wildfly/wildfly-arquillian.git](https://github.com/wildfly/wildfly-arquillian.git) |
-| Wildfly | WFCORE | [WFCORE.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKNDhzSzY4bU8yejg) | [https://github.com/wildfly/wildfly-core.git](https://github.com/wildfly/wildfly-core.git) |
-| Wildfly | WFLY | [WFLY.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKTTllanRER3JqQVU) | [https://github.com/wildfly/wildfly.git](https://github.com/wildfly/wildfly.git) |
-| Wildfly | WFMP | [WFMP.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKX05GNllYdkFmdHM) | [https://github.com/wildfly/wildfly-maven-plugin.git](https://github.com/wildfly/wildfly-maven-plugin.git) |
-| Spring | AMQP | [AMQP.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKeWRaaXV3dzNnazg) | [https://github.com/spring-projects/spring-amqp](https://github.com/spring-projects/spring-amqp) |
-| Spring | ANDROID | [ANDROID.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKNS1mUXYtSWZiVG8) | [https://github.com/spring-projects/spring-android](https://github.com/spring-projects/spring-android) |
-| Spring | BATCH | [BATCH.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKX0oyLTI0LWUtY2c) | [https://github.com/spring-projects/spring-batch](https://github.com/spring-projects/spring-batch) |
-| Spring | BATCHADM | [BATCHADM.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKZ2VwYndrdVlMUlU) | [https://github.com/spring-projects/spring-batch-admin](https://github.com/spring-projects/spring-batch-admin) |
-| Spring | DATACMNS | [DATACMNS.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKSGlld1g2ck91eG8) | [https://github.com/spring-projects/spring-data-commons](https://github.com/spring-projects/spring-data-commons) |
-| Spring | DATAGRAPH | [DATAGRAPH.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKVC16TXA3S1lqbWc) | [https://github.com/spring-projects/spring-data-neo4j](https://github.com/spring-projects/spring-data-neo4j) |
-| Spring | DATAJPA | [DATAJPA.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKS29vYUFrTHRmVE0) | [https://github.com/spring-projects/spring-data-jpa](https://github.com/spring-projects/spring-data-jpa) |
-| Spring | DATAMONGO | [DATAMONGO.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKTkoxb043RkdrSTg) | [https://github.com/spring-projects/spring-data-mongodb](https://github.com/spring-projects/spring-data-mongodb) |
-| Spring | DATAREDIS | [DATAREDIS.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKQUc1T1VyOHVHUEE) | [https://github.com/spring-projects/spring-data-redis](https://github.com/spring-projects/spring-data-redis) |
-| Spring | DATAREST | [DATAREST.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKbUU3aWI2QkdOdGM) | [https://github.com/spring-projects/spring-data-rest](https://github.com/spring-projects/spring-data-rest) |
-| Spring | LDAP | [LDAP.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKcTRGd1k2VmoxWUE) | [https://github.com/spring-projects/spring-ldap](https://github.com/spring-projects/spring-ldap) |
-| Spring | MOBILE | [MOBILE.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKNWpuMXUzY2lpRVk) | [https://github.com/spring-projects/spring-mobile](https://github.com/spring-projects/spring-mobile) |
-| Spring | ROO | [ROO.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKZEZfUUNlcmtIYjA) | [https://github.com/spring-projects/spring-roo](https://github.com/spring-projects/spring-roo) |
-| Spring | SEC | [SEC.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKRnNzQ1hDS1JUcGs) | [https://github.com/spring-projects/spring-security](https://github.com/spring-projects/spring-security) |
-| Spring | SECOAUTH | [SECOAUTH.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKX2V4Q1Q3czhhbkE) | [https://github.com/spring-projects/spring-security-oauth](https://github.com/spring-projects/spring-security-oauth) |
-| Spring | SGF | [SGF.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKYzZ6Y1FydjNuQWs) | [https://github.com/spring-projects/spring-data-gemfire](https://github.com/spring-projects/spring-data-gemfire) |
-| Spring | SHDP | [SHDP.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKQk1sZ0RtVGVVejg) | [https://github.com/spring-projects/spring-hadoop](https://github.com/spring-projects/spring-hadoop) |
-| Spring | SHL | [SHL.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKZWhKbm9SWC1NRFk) | [https://github.com/spring-projects/spring-shell](https://github.com/spring-projects/spring-shell) |
-| Spring | SOCIAL | [SOCIAL.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKajNvYndiQno1Qnc) | [https://github.com/spring-projects/spring-social](https://github.com/spring-projects/spring-social) |
-| Spring | SOCIALFB | [SOCIALFB.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKVmZsc2kxQnNXdUE) | [https://github.com/spring-projects/spring-social-facebook](https://github.com/spring-projects/spring-social-facebook) |
-| Spring | SOCIALLI | [SOCIALLI.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKVDBLbFNlMzdCc3c) | [https://github.com/spring-projects/spring-social-linkedin](https://github.com/spring-projects/spring-social-linkedin) |
-| Spring | SOCIALTW | [SOCIALTW.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKd1g0SzVFazRzZzA) | [https://github.com/spring-projects/spring-social-twitter](https://github.com/spring-projects/spring-social-twitter) |
-| Spring | SPR | [SPR.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKYmlsbkpkVjltN0E) | [https://github.com/spring-projects/spring-framework](https://github.com/spring-projects/spring-framework) |
-| Spring | SWF | [SWF.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKM3VKQVFqakJKUUk) | [https://github.com/spring-projects/spring-webflow](https://github.com/spring-projects/spring-webflow) |
-| Spring | SWS | [SWS.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKYUxaUnpWT2FnVlE) | [https://github.com/spring-projects/spring-ws](https://github.com/spring-projects/spring-ws) |
-| Previous | AspectJ | [AspectJ.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKM3BIamVVal9yN0E) | [https://github.com/eclipse/org.aspectj](https://github.com/eclipse/org.aspectj) |
-| Previous | JDT | [JDT.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKaEMxMkhfTENlZEE) | [https://github.com/eclipse/eclipse.jdt.core](https://github.com/eclipse/eclipse.jdt.core) |
-| Previous | PDE | [PDE.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKakdfRWE1ZFFISDA) | [https://github.com/eclipse/eclipse.pde.ui](https://github.com/eclipse/eclipse.pde.ui) |
-| Previous | SWT | [SWT.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKVlpTMG9OOVk4WWM) | [https://github.com/eclipse/eclipse.platform.swt](https://github.com/eclipse/eclipse.platform.swt) |
-| Previous | ZXing | [ZXing.tar](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKd2RfaFVUb1NOQjQ) | [https://github.com/zxing/zxing](https://github.com/zxing/zxing) |
-
-
 
 
 
