@@ -105,7 +105,7 @@ All the experiments are executed in Ubuntu 16.04 LTS.
 > <br />
 > // download and install indri <br />
 > $ wget https://downloads.sourceforge.net/project/lemur/lemur/indri-5.6/indri-5.6.tar.gz <br />
-> $ tar -xvf indri-5.6.tar.gz <br />
+> $ tar -xzf indri-5.6.tar.gz <br />
 > $ cd indri-5.6 <br />
 > $ ./configure <br />
 > $ make <br />
