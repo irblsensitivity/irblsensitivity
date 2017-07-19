@@ -29,60 +29,59 @@ The subjects classified into 6 groups to manage them (The Previous group is old 
 Each of the archive contains bug reports, bug report repositories that we made, cloned git repository and metadata of them that we made. 
 
 
-| Group                 	Subject	Archive      	Git Repository                           |
+| Group                  | Subject | Archive       | Git Repository                           |
 |:-----------------------|:--------|:-----------------------|:-----------------------------------------|
-| Apache	CAMEL	[CAMEL.tar](https://sourceforge.net/projects/irblsensitivity/files/Apache/CAMEL.tar)	[https://github.com/apache/camel.git](https://github.com/apache/camel.git) |
-| Apache	HBASE	[HBASE.tar](https://sourceforge.net/projects/irblsensitivity/files/Apache/HBASE.tar)	[https://github.com/apache/hbase.git](https://github.com/apache/hbase.git) |
-| Apache	HIVE	[HIVE.tar](https://sourceforge.net/projects/irblsensitivity/files/Apache/HIVE.tar)	[https://github.com/apache/hive.git](https://github.com/apache/hive.git) |
-| Commons	CODEC	[CODEC.tar](https://sourceforge.net/projects/irblsensitivity/files/Commons/CODEC.tar)	[https://github.com/apache/commons-codec.git](https://github.com/apache/commons-codec.git) |
-| Commons	COLLECTIONS	[COLLECTIONS.tar](https://sourceforge.net/projects/irblsensitivity/files/Commons/COLLECTIONS.tar)	[https://github.com/apache/commons-collections.git](https://github.com/apache/commons-collections.git) |
-| Commons	COMPRESS	[COMPRESS.tar](https://sourceforge.net/projects/irblsensitivity/files/Commons/COMPRESS.tar)	[https://github.com/apache/commons-compress.git](https://github.com/apache/commons-compress.git) |
-| Commons	CONFIGURATION	[CONFIGURATION.tar](https://sourceforge.net/projects/irblsensitivity/files/Commons/CONFIGURATION.tar)	[https://github.com/apache/commons-configuration.git](https://github.com/apache/commons-configuration.git) |
-| Commons	CRYPTO	[CRYPTO.tar](https://sourceforge.net/projects/irblsensitivity/files/Commons/CRYPTO.tar)	[https://github.com/apache/commons-crypto.git](https://github.com/apache/commons-crypto.git) |
-| Commons	CSV	[CSV.tar](https://sourceforge.net/projects/irblsensitivity/files/Commons/CSV.tar)	[https://github.com/apache/commons-csv.git](https://github.com/apache/commons-csv.git) |
-| Commons	IO	[IO.tar](https://sourceforge.net/projects/irblsensitivity/files/Commons/IO.tar)	[https://github.com/apache/commons-io.git](https://github.com/apache/commons-io.git) |
-| Commons	LANG	[LANG.tar](https://sourceforge.net/projects/irblsensitivity/files/Commons/LANG.tar)	[https://github.com/apache/commons-lang.git](https://github.com/apache/commons-lang.git) |
-| Commons	MATH	[MATH.tar](https://sourceforge.net/projects/irblsensitivity/files/Commons/MATH.tar)	[https://github.com/apache/commons-math.git](https://github.com/apache/commons-math.git) |
-| Commons	WEAVER	[WEAVER.tar](https://sourceforge.net/projects/irblsensitivity/files/Commons/WEAVER.tar)	[https://github.com/apache/commons-weaver.git](https://github.com/apache/commons-weaver.git) |
-| JBoss	ENTESB	[ENTESB.tar](https://sourceforge.net/projects/irblsensitivity/files/JBoss/ENTESB.tar)	[https://github.com/jboss-fuse/fuse.git](https://github.com/jboss-fuse/fuse.git) |
-| JBoss	JBMETA	[JBMETA.tar](https://sourceforge.net/projects/irblsensitivity/files/JBoss/JBMETA.tar)	[https://github.com/jboss/metadata.git](https://github.com/jboss/metadata.git) |
-| Wildfly	ELY	[ELY.tar](https://sourceforge.net/projects/irblsensitivity/files/Wildfly/ELY.tar)	[https://github.com/wildfly-security/wildfly-elytron.git](https://github.com/wildfly-security/wildfly-elytron.git) |
-| Wildfly	SWARM	[SWARM.tar](https://sourceforge.net/projects/irblsensitivity/files/Wildfly/SWARM.tar)	[https://github.com/wildfly-swarm/wildfly-swarm.git](https://github.com/wildfly-swarm/wildfly-swarm.git) |
-| Wildfly	WFARQ	[WFARQ.tar](https://sourceforge.net/projects/irblsensitivity/files/Wildfly/WFARQ.tar)	[https://github.com/wildfly/wildfly-arquillian.git](https://github.com/wildfly/wildfly-arquillian.git) |
-| Wildfly	WFCORE	[WFCORE.tar](https://sourceforge.net/projects/irblsensitivity/files/Wildfly/WFCORE.tar)	[https://github.com/wildfly/wildfly-core.git](https://github.com/wildfly/wildfly-core.git) |
-| Wildfly	WFLY	[WFLY.tar](https://sourceforge.net/projects/irblsensitivity/files/Wildfly/WFLY.tar)	[https://github.com/wildfly/wildfly.git](https://github.com/wildfly/wildfly.git) |
-| Wildfly	WFMP	[WFMP.tar](https://sourceforge.net/projects/irblsensitivity/files/Wildfly/WFMP.tar)	[https://github.com/wildfly/wildfly-maven-plugin.git](https://github.com/wildfly/wildfly-maven-plugin.git) |
-| Spring	AMQP	[AMQP.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/AMQP.tar)	[https://github.com/spring-projects/spring-amqp](https://github.com/spring-projects/spring-amqp) |
-| Spring	ANDROID	[ANDROID.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/ANDROID.tar)	[https://github.com/spring-projects/spring-android](https://github.com/spring-projects/spring-android) |
-| Spring	BATCH	[BATCH.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/BATCH.tar)	[https://github.com/spring-projects/spring-batch](https://github.com/spring-projects/spring-batch) |
-| Spring	BATCHADM	[BATCHADM.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/BATCHADM.tar)	[https://github.com/spring-projects/spring-batch-admin](https://github.com/spring-projects/spring-batch-admin) |
-| Spring	DATACMNS	[DATACMNS.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/DATACMNS.tar)	[https://github.com/spring-projects/spring-data-commons](https://github.com/spring-projects/spring-data-commons) |
-| Spring	DATAGRAPH	[DATAGRAPH.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/DATAGRAPH.tar)	[https://github.com/spring-projects/spring-data-neo4j](https://github.com/spring-projects/spring-data-neo4j) |
-| Spring	DATAJPA	[DATAJPA.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/DATAJPA.tar)	[https://github.com/spring-projects/spring-data-jpa](https://github.com/spring-projects/spring-data-jpa) |
-| Spring	DATAMONGO	[DATAMONGO.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/DATAMONGO.tar)	[https://github.com/spring-projects/spring-data-mongodb](https://github.com/spring-projects/spring-data-mongodb) |
-| Spring	DATAREDIS	[DATAREDIS.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/DATAREDIS.tar)	[https://github.com/spring-projects/spring-data-redis](https://github.com/spring-projects/spring-data-redis) |
-| Spring	DATAREST	[DATAREST.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/DATAREST.tar)	[https://github.com/spring-projects/spring-data-rest](https://github.com/spring-projects/spring-data-rest) |
-| Spring	LDAP	[LDAP.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/LDAP.tar)	[https://github.com/spring-projects/spring-ldap](https://github.com/spring-projects/spring-ldap) |
-| Spring	MOBILE	[MOBILE.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/MOBILE.tar)	[https://github.com/spring-projects/spring-mobile](https://github.com/spring-projects/spring-mobile) |
-| Spring	ROO	[ROO.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/ROO.tar)	[https://github.com/spring-projects/spring-roo](https://github.com/spring-projects/spring-roo) |
-| Spring	SEC	[SEC.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/SEC.tar)	[https://github.com/spring-projects/spring-security](https://github.com/spring-projects/spring-security) |
-| Spring	SECOAUTH	[SECOAUTH.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/SECOAUTH.tar)	[https://github.com/spring-projects/spring-security-oauth](https://github.com/spring-projects/spring-security-oauth) |
-| Spring	SGF	[SGF.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/SGF.tar)	[https://github.com/spring-projects/spring-data-gemfire](https://github.com/spring-projects/spring-data-gemfire) |
-| Spring	SHDP	[SHDP.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/SHDP.tar)	[https://github.com/spring-projects/spring-hadoop](https://github.com/spring-projects/spring-hadoop) |
-| Spring	SHL	[SHL.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/SHL.tar)	[https://github.com/spring-projects/spring-shell](https://github.com/spring-projects/spring-shell) |
-| Spring	SOCIAL	[SOCIAL.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/SOCIAL.tar)	[https://github.com/spring-projects/spring-social](https://github.com/spring-projects/spring-social) |
-| Spring	SOCIALFB	[SOCIALFB.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/SOCIALFB.tar)	[https://github.com/spring-projects/spring-social-facebook](https://github.com/spring-projects/spring-social-facebook) |
-| Spring	SOCIALLI	[SOCIALLI.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/SOCIALLI.tar)	[https://github.com/spring-projects/spring-social-linkedin](https://github.com/spring-projects/spring-social-linkedin) |
-| Spring	SOCIALTW	[SOCIALTW.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/SOCIALTW.tar)	[https://github.com/spring-projects/spring-social-twitter](https://github.com/spring-projects/spring-social-twitter) |
-| Spring	SPR	[SPR.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/SPR.tar)	[https://github.com/spring-projects/spring-framework](https://github.com/spring-projects/spring-framework) |
-| Spring	SWF	[SWF.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/SWF.tar)	[https://github.com/spring-projects/spring-webflow](https://github.com/spring-projects/spring-webflow) |
-| Spring	SWS	[SWS.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/SWS.tar)	[https://github.com/spring-projects/spring-ws](https://github.com/spring-projects/spring-ws) |
-| Previous	AspectJ	[AspectJ.tar](https://sourceforge.net/projects/irblsensitivity/files/Previous/AspectJ.tar)	[https://github.com/eclipse/org.aspectj](https://github.com/eclipse/org.aspectj) |
-| Previous	JDT	[JDT.tar](https://sourceforge.net/projects/irblsensitivity/files/Previous/JDT.tar)	[https://github.com/eclipse/eclipse.jdt.core](https://github.com/eclipse/eclipse.jdt.core) |
-| Previous	PDE	[PDE.tar](https://sourceforge.net/projects/irblsensitivity/files/Previous/PDE.tar)	[https://github.com/eclipse/eclipse.pde.ui](https://github.com/eclipse/eclipse.pde.ui) |
-| Previous	SWT	[SWT.tar](https://sourceforge.net/projects/irblsensitivity/files/Previous/SWT.tar)	[https://github.com/eclipse/eclipse.platform.swt](https://github.com/eclipse/eclipse.platform.swt) |
-| Previous	ZXing	[ZXing.tar](https://sourceforge.net/projects/irblsensitivity/files/Previous/ZXing.tar)	[https://github.com/zxing/zxing](https://github.com/zxing/zxing) |
-
+| Apache | CAMEL | [CAMEL.tar](https://sourceforge.net/projects/irblsensitivity/files/Apache/CAMEL.tar) | [https://github.com/apache/camel.git](https://github.com/apache/camel.git) |
+| Apache | HBASE | [HBASE.tar](https://sourceforge.net/projects/irblsensitivity/files/Apache/HBASE.tar) | [https://github.com/apache/hbase.git](https://github.com/apache/hbase.git) |
+| Apache | HIVE | [HIVE.tar](https://sourceforge.net/projects/irblsensitivity/files/Apache/HIVE.tar) | [https://github.com/apache/hive.git](https://github.com/apache/hive.git) |
+| Commons | CODEC | [CODEC.tar](https://sourceforge.net/projects/irblsensitivity/files/Commons/CODEC.tar) | [https://github.com/apache/commons-codec.git](https://github.com/apache/commons-codec.git) |
+| Commons | COLLECTIONS | [COLLECTIONS.tar](https://sourceforge.net/projects/irblsensitivity/files/Commons/COLLECTIONS.tar) | [https://github.com/apache/commons-collections.git](https://github.com/apache/commons-collections.git) |
+| Commons | COMPRESS | [COMPRESS.tar](https://sourceforge.net/projects/irblsensitivity/files/Commons/COMPRESS.tar) | [https://github.com/apache/commons-compress.git](https://github.com/apache/commons-compress.git) |
+| Commons | CONFIGURATION | [CONFIGURATION.tar](https://sourceforge.net/projects/irblsensitivity/files/Commons/CONFIGURATION.tar) | [https://github.com/apache/commons-configuration.git](https://github.com/apache/commons-configuration.git) |
+| Commons | CRYPTO | [CRYPTO.tar](https://sourceforge.net/projects/irblsensitivity/files/Commons/CRYPTO.tar) | [https://github.com/apache/commons-crypto.git](https://github.com/apache/commons-crypto.git) |
+| Commons | CSV | [CSV.tar](https://sourceforge.net/projects/irblsensitivity/files/Commons/CSV.tar) | [https://github.com/apache/commons-csv.git](https://github.com/apache/commons-csv.git) |
+| Commons | IO | [IO.tar](https://sourceforge.net/projects/irblsensitivity/files/Commons/IO.tar) | [https://github.com/apache/commons-io.git](https://github.com/apache/commons-io.git) |
+| Commons | LANG | [LANG.tar](https://sourceforge.net/projects/irblsensitivity/files/Commons/LANG.tar) | [https://github.com/apache/commons-lang.git](https://github.com/apache/commons-lang.git) |
+| Commons | MATH | [MATH.tar](https://sourceforge.net/projects/irblsensitivity/files/Commons/MATH.tar) | [https://github.com/apache/commons-math.git](https://github.com/apache/commons-math.git) |
+| Commons | WEAVER | [WEAVER.tar](https://sourceforge.net/projects/irblsensitivity/files/Commons/WEAVER.tar) | [https://github.com/apache/commons-weaver.git](https://github.com/apache/commons-weaver.git) |
+| JBoss | ENTESB | [ENTESB.tar](https://sourceforge.net/projects/irblsensitivity/files/JBoss/ENTESB.tar) | [https://github.com/jboss-fuse/fuse.git](https://github.com/jboss-fuse/fuse.git) |
+| JBoss | JBMETA | [JBMETA.tar](https://sourceforge.net/projects/irblsensitivity/files/JBoss/JBMETA.tar) | [https://github.com/jboss/metadata.git](https://github.com/jboss/metadata.git) |
+| Wildfly | ELY | [ELY.tar](https://sourceforge.net/projects/irblsensitivity/files/Wildfly/ELY.tar) | [https://github.com/wildfly-security/wildfly-elytron.git](https://github.com/wildfly-security/wildfly-elytron.git) |
+| Wildfly | SWARM | [SWARM.tar](https://sourceforge.net/projects/irblsensitivity/files/Wildfly/SWARM.tar) | [https://github.com/wildfly-swarm/wildfly-swarm.git](https://github.com/wildfly-swarm/wildfly-swarm.git) |
+| Wildfly | WFARQ | [WFARQ.tar](https://sourceforge.net/projects/irblsensitivity/files/Wildfly/WFARQ.tar) | [https://github.com/wildfly/wildfly-arquillian.git](https://github.com/wildfly/wildfly-arquillian.git) |
+| Wildfly | WFCORE | [WFCORE.tar](https://sourceforge.net/projects/irblsensitivity/files/Wildfly/WFCORE.tar) | [https://github.com/wildfly/wildfly-core.git](https://github.com/wildfly/wildfly-core.git) |
+| Wildfly | WFLY | [WFLY.tar](https://sourceforge.net/projects/irblsensitivity/files/Wildfly/WFLY.tar) | [https://github.com/wildfly/wildfly.git](https://github.com/wildfly/wildfly.git) |
+| Wildfly | WFMP | [WFMP.tar](https://sourceforge.net/projects/irblsensitivity/files/Wildfly/WFMP.tar) | [https://github.com/wildfly/wildfly-maven-plugin.git](https://github.com/wildfly/wildfly-maven-plugin.git) |
+| Spring | AMQP | [AMQP.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/AMQP.tar) | [https://github.com/spring-projects/spring-amqp](https://github.com/spring-projects/spring-amqp) |
+| Spring | ANDROID | [ANDROID.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/ANDROID.tar) | [https://github.com/spring-projects/spring-android](https://github.com/spring-projects/spring-android) |
+| Spring | BATCH | [BATCH.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/BATCH.tar) | [https://github.com/spring-projects/spring-batch](https://github.com/spring-projects/spring-batch) |
+| Spring | BATCHADM | [BATCHADM.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/BATCHADM.tar) | [https://github.com/spring-projects/spring-batch-admin](https://github.com/spring-projects/spring-batch-admin) |
+| Spring | DATACMNS | [DATACMNS.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/DATACMNS.tar) | [https://github.com/spring-projects/spring-data-commons](https://github.com/spring-projects/spring-data-commons) |
+| Spring | DATAGRAPH | [DATAGRAPH.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/DATAGRAPH.tar) | [https://github.com/spring-projects/spring-data-neo4j](https://github.com/spring-projects/spring-data-neo4j) |
+| Spring | DATAJPA | [DATAJPA.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/DATAJPA.tar) | [https://github.com/spring-projects/spring-data-jpa](https://github.com/spring-projects/spring-data-jpa) |
+| Spring | DATAMONGO | [DATAMONGO.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/DATAMONGO.tar) | [https://github.com/spring-projects/spring-data-mongodb](https://github.com/spring-projects/spring-data-mongodb) |
+| Spring | DATAREDIS | [DATAREDIS.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/DATAREDIS.tar) | [https://github.com/spring-projects/spring-data-redis](https://github.com/spring-projects/spring-data-redis) |
+| Spring | DATAREST | [DATAREST.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/DATAREST.tar) | [https://github.com/spring-projects/spring-data-rest](https://github.com/spring-projects/spring-data-rest) |
+| Spring | LDAP | [LDAP.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/LDAP.tar) | [https://github.com/spring-projects/spring-ldap](https://github.com/spring-projects/spring-ldap) |
+| Spring | MOBILE | [MOBILE.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/MOBILE.tar) | [https://github.com/spring-projects/spring-mobile](https://github.com/spring-projects/spring-mobile) |
+| Spring | ROO | [ROO.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/ROO.tar) | [https://github.com/spring-projects/spring-roo](https://github.com/spring-projects/spring-roo) |
+| Spring | SEC | [SEC.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/SEC.tar) | [https://github.com/spring-projects/spring-security](https://github.com/spring-projects/spring-security) |
+| Spring | SECOAUTH | [SECOAUTH.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/SECOAUTH.tar) | [https://github.com/spring-projects/spring-security-oauth](https://github.com/spring-projects/spring-security-oauth) |
+| Spring | SGF | [SGF.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/SGF.tar) | [https://github.com/spring-projects/spring-data-gemfire](https://github.com/spring-projects/spring-data-gemfire) |
+| Spring | SHDP | [SHDP.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/SHDP.tar) | [https://github.com/spring-projects/spring-hadoop](https://github.com/spring-projects/spring-hadoop) |
+| Spring | SHL | [SHL.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/SHL.tar) | [https://github.com/spring-projects/spring-shell](https://github.com/spring-projects/spring-shell) |
+| Spring | SOCIAL | [SOCIAL.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/SOCIAL.tar) | [https://github.com/spring-projects/spring-social](https://github.com/spring-projects/spring-social) |
+| Spring | SOCIALFB | [SOCIALFB.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/SOCIALFB.tar) | [https://github.com/spring-projects/spring-social-facebook](https://github.com/spring-projects/spring-social-facebook) |
+| Spring | SOCIALLI | [SOCIALLI.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/SOCIALLI.tar) | [https://github.com/spring-projects/spring-social-linkedin](https://github.com/spring-projects/spring-social-linkedin) |
+| Spring | SOCIALTW | [SOCIALTW.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/SOCIALTW.tar) | [https://github.com/spring-projects/spring-social-twitter](https://github.com/spring-projects/spring-social-twitter) |
+| Spring | SPR | [SPR.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/SPR.tar) | [https://github.com/spring-projects/spring-framework](https://github.com/spring-projects/spring-framework) |
+| Spring | SWF | [SWF.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/SWF.tar) | [https://github.com/spring-projects/spring-webflow](https://github.com/spring-projects/spring-webflow) |
+| Spring | SWS | [SWS.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/SWS.tar) | [https://github.com/spring-projects/spring-ws](https://github.com/spring-projects/spring-ws) |
+| Previous | AspectJ | [AspectJ.tar](https://sourceforge.net/projects/irblsensitivity/files/Previous/AspectJ.tar) | [https://github.com/eclipse/org.aspectj](https://github.com/eclipse/org.aspectj) |
+| Previous | JDT | [JDT.tar](https://sourceforge.net/projects/irblsensitivity/files/Previous/JDT.tar) | [https://github.com/eclipse/eclipse.jdt.core](https://github.com/eclipse/eclipse.jdt.core) |
+| Previous | PDE | [PDE.tar](https://sourceforge.net/projects/irblsensitivity/files/Previous/PDE.tar) | [https://github.com/eclipse/eclipse.pde.ui](https://github.com/eclipse/eclipse.pde.ui) |
+| Previous | SWT | [SWT.tar](https://sourceforge.net/projects/irblsensitivity/files/Previous/SWT.tar) | [https://github.com/eclipse/eclipse.platform.swt](https://github.com/eclipse/eclipse.platform.swt) |
+| Previous | ZXing | [ZXing.tar](https://sourceforge.net/projects/irblsensitivity/files/Previous/ZXing.tar) | [https://github.com/zxing/zxing](https://github.com/zxing/zxing) |
 
 
 
