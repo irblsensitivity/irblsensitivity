@@ -103,7 +103,7 @@ All the experiments are executed in Ubuntu 16.04 LTS.
 > $ sudo apt-get install make <br />
 > $ sudo apt-get install --reinstall zlibc zlib1g zlib1g-dev <br />
 > <br />
-> // download and install indri <br />
+> // download and install indri (If you faced an error in the compiling, please try with another version.)<br />
 > $ wget https://downloads.sourceforge.net/project/lemur/lemur/indri-5.6/indri-5.6.tar.gz <br />
 > $ tar -xzf indri-5.6.tar.gz <br />
 > $ cd indri-5.6 <br />
@@ -119,8 +119,9 @@ All the experiments are executed in Ubuntu 16.04 LTS.
 >  <br />
 > // changeSettings.txt file <br />
 > $ cd ~/irblsensitivity/techniques/releases &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// We assume you cloned our repository to  <br />
-> $ vi Settings.txt
->    indripath=/usr/local/bin/ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<-- edit this value as a the first log of "make install" <br />
+> $ vi Settings.txt <br />
+> &nbsp; &nbsp; indripath=/usr/local/bin/ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<-- edit this value as a the first log of "make install" <br />
+>
 
 ### Install java and python
 * We used java 8 and python 2.7
