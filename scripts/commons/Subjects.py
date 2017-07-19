@@ -13,11 +13,11 @@ class Subjects(object):
 	Sourcecode, Bug reports, Duplicate bug reports
 	'''
 	__name__ = u'Subjects'
-	root = u'/var/experiments/BugLocalization/dist/data/'
-	root_result = u'/var/experiments/BugLocalization/dist/expresults/'
-	root_feature = u'/var/experiments/BugLocalization/dist/features/'
+	root = u'/home/experiments/irblsensitivity/data/'
+	root_result = u'/home/experiments/irblsensitivity/expresults/'
+	root_feature = u'/home/experiments/irblsensitivity/features/'
 	techniques = ['BugLocator', 'BRTracer', 'BLUiR', 'AmaLgam', 'BLIA', 'Locus']
-	groups = ['Apache', 'Commons', 'JBoss', 'Wildfly', 'Spring'] #'Apache',
+	groups = ['Apache', 'Commons', 'JBoss', 'Wildfly', 'Spring']
 	projects = {
 		'Apache':[u'CAMEL', u'HBASE', u'HIVE'],
 		'Commons':[u'CODEC', u'COLLECTIONS', u'COMPRESS', u'CONFIGURATION', u'CRYPTO', u'CSV', u'IO', u'LANG', u'MATH', u'WEAVER'],
