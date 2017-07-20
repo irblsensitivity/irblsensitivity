@@ -47,14 +47,15 @@ urls={
 	'SHL':u'https://github.com/spring-projects/spring-shell',
 	'SOCIAL':u'https://github.com/spring-projects/spring-social',
 	'SOCIALFB':u'https://github.com/spring-projects/spring-social-facebook',
-	'SOCIALGH':u'https://github.com/spring-projects/spring-social-github',
 	'SOCIALLI':u'https://github.com/spring-projects/spring-social-linkedin',
 	'SOCIALTW':u'https://github.com/spring-projects/spring-social-twitter',
+	'SPR':u'https://github.com/spring-projects/spring-framework',
 	'SWF':u'https://github.com/spring-projects/spring-webflow',
 	'SWS':u'https://github.com/spring-projects/spring-ws',
 	'SGF':u'https://github.com/spring-projects/spring-data-gemfire',
 	'SHDP':u'https://github.com/spring-projects/spring-hadoop',
 	'SEC':u'https://github.com/spring-projects/spring-security',
+	#'SOCIALGH':u'https://github.com/spring-projects/spring-social-github',
 }
 
 # Make works
