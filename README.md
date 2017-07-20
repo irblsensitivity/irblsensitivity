@@ -20,7 +20,7 @@ This repository shares data and code used for paper titled "Sensitivity Analysis
 
 ### Understand Features
 We used the results from the [Understnad](https://scitools.com/) tool to extract the metrics for the target code. 
-If you don't have a license of the Understand tool, download the archive file [understand_features](https://drive.google.com/uc?export=download&id=0B78iVP5pcTfKRURZc3hvUWxseTA), and extract it into the features directory. 
+If you don't have a license of the Understand tool, download the archive file [understand_features](https://sourceforge.net/projects/irblsensitivity/files/understand_features.tar.gz), and extract it into the features directory. 
 To apply this archive, You can find in the replication section.     
         
 ### Subjects ( Bug and Source Code Repository )
@@ -72,7 +72,16 @@ Each of the archive contains bug reports, bug report repositories that we made, 
 | Spring | SHL | [SHL.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/SHL.tar) | [https://github.com/spring-projects/spring-shell](https://github.com/spring-projects/spring-shell) |
 | Spring | SOCIAL | [SOCIAL.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/SOCIAL.tar) | [https://github.com/spring-projects/spring-social](https://github.com/spring-projects/spring-social) |
 | Spring | SOCIALFB | [SOCIALFB.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/SOCIALFB.tar) | [https://github.com/spring-projects/spring-social-facebook](https://github.com/spring-projects/spring-social-facebook) |
-
+| Spring | SOCIALLI | [SOCIALLI.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/SOCIALLI.tar) | [https://github.com/spring-projects/spring-social-linkedin](https://github.com/spring-projects/spring-social-linkedin) |
+| Spring | SOCIALTW | [SOCIALTW.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/SOCIALTW.tar) | [https://github.com/spring-projects/spring-social-twitter](https://github.com/spring-projects/spring-social-twitter) |
+| Spring | SPR | [SPR.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/SPR.tar) | [https://github.com/spring-projects/spring-framework](https://github.com/spring-projects/spring-framework) |
+| Spring | SWF | [SWF.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/SWF.tar) | [https://github.com/spring-projects/spring-webflow](https://github.com/spring-projects/spring-webflow) |
+| Spring | SWS | [SWS.tar](https://sourceforge.net/projects/irblsensitivity/files/Spring/SWS.tar) | [https://github.com/spring-projects/spring-ws](https://github.com/spring-projects/spring-ws) |
+| Previous | AspectJ | [AspectJ.tar](https://sourceforge.net/projects/irblsensitivity/files/Previous/AspectJ.tar) | [https://github.com/eclipse/org.aspectj](https://github.com/eclipse/org.aspectj) |
+| Previous | JDT | [JDT.tar](https://sourceforge.net/projects/irblsensitivity/files/Previous/JDT.tar) | [https://github.com/eclipse/eclipse.jdt.core](https://github.com/eclipse/eclipse.jdt.core) |
+| Previous | PDE | [PDE.tar](https://sourceforge.net/projects/irblsensitivity/files/Previous/PDE.tar) | [https://github.com/eclipse/eclipse.pde.ui](https://github.com/eclipse/eclipse.pde.ui) |
+| Previous | SWT | [SWT.tar](https://sourceforge.net/projects/irblsensitivity/files/Previous/SWT.tar) | [https://github.com/eclipse/eclipse.platform.swt](https://github.com/eclipse/eclipse.platform.swt) |
+| Previous | ZXing | [ZXing.tar](https://sourceforge.net/projects/irblsensitivity/files/Previous/ZXing.tar) | [https://github.com/zxing/zxing](https://github.com/zxing/zxing) |
 
 
 
