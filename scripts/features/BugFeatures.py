@@ -21,7 +21,7 @@ class BugFeatures(object):
 	statistics = {}
 	errorout = None
 	isComplement = True  # If flesch returns an empty result, calculate it using another method.
-	infozilla = u'/var/experiments/BugLocalization/dist/release/infozilla.jar'
+	infozilla = u'/var/experiments/BugLocalization/release/infozilla.jar'
 
 	def __init__(self, _group, _project, _basePath):
 		'''
@@ -212,7 +212,8 @@ class BugFeatures(object):
 
 		try:
 			self.errorout.write('cmd : %s\n' % command)
-			result = subprocess.check_output(command, stderr=self.errorout, cwd=u'/var/experiments/BugLocalization/dist/release/')
+			cwd = self.infozilla[:self.infozilla.rfind(u'/')+1]
+			result = subprocess.check_output(command, stderr=self.errorout, cwd=cwd)
 			if result is None:
 				self.errorout.write('\n:::cannot get the result!\n')
 				self.errorout.flush()

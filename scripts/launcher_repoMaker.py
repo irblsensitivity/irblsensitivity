@@ -34,7 +34,7 @@ def clean():
 
 def work():
 	S = Subjects()
-	for group in ['JBoss']:#S.groups: # ['JBoss']:#'['Apache', 'JBoss', 'Wildfly',  'Spring']:#
+	for group in S.groups: # ['JBoss']:#'['Apache', 'JBoss', 'Wildfly',  'Spring']:#
 		for project in S.projects[group]:
 			obj = BugRepositoryMaker(project,
 			                         S.getPath_bugrepo(group, project),
