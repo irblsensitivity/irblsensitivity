@@ -5,3 +5,12 @@ archives/
 features/
 techniques/releases/logs/
 
+# for Eclipse Settings
+techniques/*/bin
+techniques/*/.classpath
+techniques/*/.project
+techniques/*/.settings
+techniques/.metadata
+
+# for Pycharm
+*/.idea
