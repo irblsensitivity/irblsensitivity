@@ -1,9 +1,7 @@
 #-*- coding: utf-8 -*-
 from __future__ import print_function
-
 import os
 import shutil
-
 from commons import Subjects
 from repository import BugRepositoryMaker
 

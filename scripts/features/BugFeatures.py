@@ -13,6 +13,7 @@ import subprocess
 from xml.etree import ElementTree
 from utils import PrettyStringBuilder
 from utils import Progress
+import codecs
 
 
 class BugFeatures(object):
@@ -21,7 +22,7 @@ class BugFeatures(object):
 	statistics = {}
 	errorout = None
 	isComplement = True  # If flesch returns an empty result, calculate it using another method.
-	infozilla = u'/var/experiments/BugLocalization/release/infozilla.jar'
+	infozilla = u'/mnt/exp/Bug/techniques/releases/infozilla.jar'
 
 	def __init__(self, _group, _project, _basePath):
 		'''
@@ -156,7 +157,7 @@ class BugFeatures(object):
 		for bugID, desc in self.genBugs(_repoPath, 'description'):
 			filepath =  os.path.join(_outputPath, u'%d.txt'%bugID)
 			f = open(filepath, 'w')
-			f.write(desc)
+			f.write(desc.encode("ASCII", 'ignore'))
 			f.close()
 			progress.check()
 		progress.done()
@@ -434,7 +435,18 @@ def clear():
 				print(u'Removed : %s' % features)
 			except OSError as e:
 				print(u'Already removed : %s' % path)
+	pass
 
+def clear_full():
+	S = Subjects()
+	for group in S.groups:  # ['JBoss']: #
+		for project in S.projects[group]:
+			path = os.path.join(S.getPath_featurebase(group,project), u'bugs')
+			try:
+				shutil.rmtree(path)
+				print(u'Removed : %s' % path)
+			except OSError as e:
+				print(u'Already removed : %s' % path)
 	pass
 
 def work():
@@ -447,7 +459,19 @@ def work():
 			obj.finalize()
 			obj.storeData_asTable(os.path.join(S.getPath_featureroot(), u'bug_features.txt'), group, project, obj.loadResult())
 
+def work_Previous():
+	S = Subjects()
+	for group in [u'Previous']:
+		for project in [u'AspectJ', u'ZXing', u'PDE', u'JDT', u'SWT']:
+			print(u'BugFeatureExtractor for %s / %s' % (group, project))
+			obj = BugFeatures(group, project, S.getPath_featurebase(group, project))
+			obj.run(project, os.path.join(S.getPath_bugrepo(group, project), u'repository.xml'), _isForce=True)
+			obj.finalize()
+			obj.storeData_asTable(os.path.join(S.getPath_featureroot(), u'bug_features.txt'), group, project, obj.loadResult())
+
+
 if __name__ == "__main__":
-	#clear()
+	#clear_full()
 	work()
+	#work_Previous()
 	pass

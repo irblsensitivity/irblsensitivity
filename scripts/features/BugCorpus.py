@@ -191,9 +191,19 @@ def work():
 			obj = BugCorpus(S.getPath_featurebase(group,project), _isSplitCamel=True)
 			obj.run(group, project)
 
+def work_Previous():
+	S = Subjects()
+	for group in [u'Previous']:
+		for project in [u'AspectJ', u'ZXing', u'PDE', u'JDT', u'SWT']:
+			print(u'[%s/%s] making statistics ....' % (group, project))
+			obj = BugCorpus(S.getPath_featurebase(group,project), _isSplitCamel=False)
+			obj.run(group, project)
+
+
 if __name__ == "__main__":
 	#clear(True)
 	work()
+	#work_Previous()
 	pass
 
 

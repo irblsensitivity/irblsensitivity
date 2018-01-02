@@ -243,3 +243,21 @@ All the experiments are executed in Ubuntu 16.04 LTS.
 > IRBL/scripts$ python launcher_Tool.py -w NewDataSingle -s <br />
 > IRBL/scripts$ python launcher_Tool.py -w NewData_Locus -t Locus <br />
 > IRBL/scripts$ python launcher_Tool.py -w NewData_CAMLE -g Apache -p CAMEL <br />
+
+
+# Previous Techniques Load on Eclipse
+We changed previous techniques on Eclipse. But we didn't include eclipse environment files (.metadata folder, .project and .classpath file) in each previous techniques folders.
+ 
+ So, If you want to load these techniques on Eclipse, please follow next sequence.
+ 
+ - Open Eclipse
+ - Make a 'techniques' folder into workplace of Eclipse. Then .metadata folder will be created in 'techniques' folder.
+ - On the 'Package Explorer' panel, Open context menu by clicking right mouse button.
+ - Select 'Import', Then a pop-up windows will be placed.
+ - Except BLUiR project,  choose 'General > Projects from Folder or Archive' item and click 'Next' button.
+ - Designate project folder in 'techniques' and click 'Finish' button.
+ - Then, the project will be loaded and be shown in the Package Explorer.
+ - BLUiR is made as Maven project. So, You should import with 'Maven > Existing Maven Project'. And then, just choose project folder. You don't need to change any other options.
+ - Especially BLIA project, need to add library JUnit.
+
+

@@ -1,4 +1,4 @@
-#-*- coding: utf-8 -*-
+#*- coding: utf-8 -*-
 '''
 Created on 2017. 02. 16
 Updated on 2017. 02. 16
@@ -13,18 +13,19 @@ class Subjects(object):
 	Sourcecode, Bug reports, Duplicate bug reports
 	'''
 	__name__ = u'Subjects'
-	root = u'/home/experiments/irblsensitivity/data/'
-	root_result = u'/home/experiments/irblsensitivity/expresults/'
-	root_feature = u'/home/experiments/irblsensitivity/features/'
+	root = u'/mnt/exp/Bug/data/'
+	root_result = u'/mnt/exp/Bug/expresults/'
+	root_feature = u'/mnt/exp/Bug/features/'
 	techniques = ['BugLocator', 'BRTracer', 'BLUiR', 'AmaLgam', 'BLIA', 'Locus']
 	groups = ['Apache', 'Commons', 'JBoss', 'Wildfly', 'Spring']
 	projects = {
 		'Apache':[u'CAMEL', u'HBASE', u'HIVE'],
-		'Commons':[u'CODEC', u'COLLECTIONS', u'COMPRESS', u'CONFIGURATION', u'CRYPTO', u'CSV', u'IO', u'LANG', u'MATH', u'WEAVER'],
+		'Commons':[u'CODEC', u'COLLECTIONS', u'COMPRESS', u'CONFIGURATION', u'CRYPTO', u'IO', u'LANG', u'MATH', u'WEAVER',u'CSV'],
 		'JBoss':[u'ENTESB', u'JBMETA'],
-		'Wildfly':[u'ELY', u'SWARM', u'WFARQ',  u'WFCORE', u'WFLY', u'WFMP'],
+		'Wildfly':[u'ELY', u'WFARQ', u'WFCORE', u'WFLY', u'WFMP',u'SWARM'],
 		'Spring':[U'AMQP', U'ANDROID', U'BATCH', U'BATCHADM', U'DATACMNS', U'DATAGRAPH', U'DATAJPA', U'DATAMONGO', U'DATAREDIS', U'DATAREST', U'LDAP', U'MOBILE', U'ROO', U'SEC', U'SECOAUTH', U'SGF', U'SHDP', U'SHL', U'SOCIAL', U'SOCIALFB', U'SOCIALLI', U'SOCIALTW', U'SPR', U'SWF', U'SWS']
 	}
+
 	###
 	# versions has all available source code version
 	versions = {}

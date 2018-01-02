@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from __future__ import print_function
-
 from commons import Subjects
 from repository import GitInflator
 
@@ -49,7 +48,7 @@ urls={
 	'SOCIALFB':u'https://github.com/spring-projects/spring-social-facebook',
 	'SOCIALLI':u'https://github.com/spring-projects/spring-social-linkedin',
 	'SOCIALTW':u'https://github.com/spring-projects/spring-social-twitter',
-	'SPR':u'https://github.com/spring-projects/spring-framework',
+    'SPR':u'https://github.com/spring-projects/spring-framework',
 	'SWF':u'https://github.com/spring-projects/spring-webflow',
 	'SWS':u'https://github.com/spring-projects/spring-ws',
 	'SGF':u'https://github.com/spring-projects/spring-data-gemfire',
@@ -85,3 +84,4 @@ def clear():
 
 #clear()
 make()
+

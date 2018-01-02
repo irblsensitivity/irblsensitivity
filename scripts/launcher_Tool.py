@@ -29,8 +29,8 @@ class Launcher(object):
 	'''
 
 	ProgramNames = [u'BugLocator',  u'BRTracer', u'BLUiR', u'AmaLgam',  u'BLIA', u'Locus']
-	ProgramPATH = u'/var/experiments/BugLocalization/dist/techniques/releases/'
-	OutputPATH = u'/var/experiments/BugLocalization/dist/expresults/'
+	ProgramPATH = u'/mnt/exp/Bug/techniques/releases/'
+	OutputPATH = u'/mnt/exp/Bug/expresults/'
 	JavaOptions = u'-Xms512m -Xmx4000m'
 	JavaOptions_Locus = u'-Xms512m -Xmx8000m'
 	TYPE = u'Test'
