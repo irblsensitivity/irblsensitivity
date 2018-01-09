@@ -231,11 +231,9 @@ class Launcher(object):
 		self.log = open(os.path.join(self.ProgramPATH, 'logs', self.logFileName%(nameTag)), 'w')
 
 		# select target subjects or select all.
-		for group in (self.S.groups if _sGroup is None else [_sGroup]):
-
-			for project in (self.S.projects[group] if _sProject is None else [_sProject]):
-
-				for program in (self.ProgramNames if _sProgram is None else [_sProgram]):
+		for program in (self.ProgramNames if _sProgram is None else [_sProgram]):
+			for group in (self.S.groups if _sGroup is None else [_sGroup]):
+				for project in (self.S.projects[group] if _sProject is None else [_sProject]):
 					#working selected subject and program.
 					versions = self.S.bugs[project].keys()
 					if _isDist is True:
@@ -278,14 +276,14 @@ class Launcher(object):
 		self.log = open(os.path.join(self.ProgramPATH, 'logs', self.logFileName%nameTag), 'w')
 
 		self.S = Previous()
-		for group in self.S.groups:
-			if _sGroup is not None and group != _sGroup: continue
+		for program in self.ProgramNames:
+			if _sProgram is not None and program != _sProgram: continue
 
-			for project in self.S.projects[group]:
-				if _sProject is not None and project != _sProject: continue
+			for group in self.S.groups:
+				if _sGroup is not None and group != _sGroup: continue
 
-				for program in self.ProgramNames:
-					if _sProgram is not None and program != _sProgram: continue
+				for project in self.S.projects[group]:
+					if _sProject is not None and project != _sProject: continue
 
 					maxVersion = self.S.get_max_versions(program, project)
 					versionName = u'%s_%s' % (project, VersionUtil.get_versionName(maxVersion))

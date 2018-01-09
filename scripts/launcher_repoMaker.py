@@ -28,9 +28,19 @@ def clean(_sGroup=None, _sProject=None):
 	for group in (S.groups if _sGroup is None else [_sGroup]):
 		for project in (S.projects[group] if _sProject is None else [_sProject]):
 			print(u'cleanning %s / %s ' % (group, project))
+			tempfile1 = os.path.join(S.getPath_bugrepo(group, project), u'.git.log')
+			tempfile2 = os.path.join(S.getPath_bugrepo(group, project), u'.git_version.txt')
 			dirpath = os.path.join(S.getPath_bugrepo(group, project), u'repository')
 			fullrepo = os.path.join(S.getPath_bugrepo(group, project), u'repository_full.xml')
 			filteredrepo = os.path.join(S.getPath_bugrepo(group, project), u'repository.xml')
+			try:
+				os.remove(tempfile1)
+			except Exception as e:
+				print(u'Failed to remove git log')
+			try:
+				os.remove(tempfile2)
+			except Exception as e:
+				print(u'Failed to remove git versions')
 			try:
 				shutil.rmtree(dirpath)
 			except Exception as e:
