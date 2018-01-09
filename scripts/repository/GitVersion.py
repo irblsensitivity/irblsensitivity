@@ -32,6 +32,7 @@ class GitVersion:
 		# initialize related finding version
 		self.regxVersion = re.compile(r'([0-9]+[_\-\.]*)+')
 		self.git = Repo(self.GitRepoPath)
+		self.tagmap = {}
 		self.tags = {}
 		self.tagtimes = {}
 
