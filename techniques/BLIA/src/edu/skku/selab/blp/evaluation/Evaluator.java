@@ -7,6 +7,7 @@
  */
 package edu.skku.selab.blp.evaluation;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -14,6 +15,8 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Map.Entry;
+import java.util.Set;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -25,6 +28,7 @@ import edu.skku.selab.blp.db.IntegratedAnalysisValue;
 import edu.skku.selab.blp.db.dao.BugDAO;
 import edu.skku.selab.blp.db.dao.ExperimentResultDAO;
 import edu.skku.selab.blp.db.dao.IntegratedAnalysisDAO;
+import edu.skku.selab.blp.db.dao.SourceFileDAO;
 import edu.skku.selab.blp.utils.Util;
 
 /**
@@ -37,6 +41,7 @@ public class Evaluator {
 	
 	private ExperimentResult experimentResult;
 	private ArrayList<Bug> bugs = null;
+	private HashMap<Integer, String> sourceIDFileMap = null;
 	private HashMap<Integer, HashSet<SourceFile>> realFixedFilesMap = null;;
 	private HashMap<Integer, ArrayList<IntegratedAnalysisValue>> rankedValuesMap = null;
 	private FileWriter writer = null; 
@@ -83,6 +88,15 @@ public class Evaluator {
 		String productName = experimentResult.getProductName();
 		BugDAO bugDAO = new BugDAO();
 		bugs = bugDAO.getAllBugs(productName, true);
+		
+		//소스파일 정보 로드
+		sourceIDFileMap = new HashMap<Integer, String>();
+		
+		SourceFileDAO sourceFileDAO = new SourceFileDAO();
+		HashMap<String, Integer> sourceFileMap = sourceFileDAO.getSourceFileVersionIDs(productName, SourceFileDAO.DEFAULT_VERSION_STRING);		
+		for (Entry<String, Integer> entry : sourceFileMap.entrySet()) {
+			sourceIDFileMap.put(entry.getValue(), entry.getKey());
+		}
 		
 		realFixedFilesMap = new HashMap<Integer, HashSet<SourceFile>>();
 		rankedValuesMap = new HashMap<Integer, ArrayList<IntegratedAnalysisValue>>();
@@ -178,10 +192,29 @@ public class Evaluator {
 			System.out.println(bugID + "\t" + "failed to find answers");
     }
 	
+	private void printAllResults(String _path, int _bugID, ArrayList<IntegratedAnalysisValue> _rankedValues) throws IOException {
+		FileWriter fullwriter = new FileWriter(_path + Property.getInstance().separator + _bugID + ".txt", false);
+		
+		for (int rank = 0; rank < _rankedValues.size(); rank++) {
+			//int sourceFileID = _rankedValues.get(rank).getSourceFileVersionID();
+			double score = _rankedValues.get(rank).getBLIAScore();
+			int versionID = _rankedValues.get(rank).getSourceFileVersionID();
+			String fileName = sourceIDFileMap.get(versionID);
+			String line = rank + "\t" + score + "\t" + fileName +"\n";
+			fullwriter.write(line);
+		}
+		fullwriter.close();
+	}
+	
 	private void calculateMetrics() throws IOException{
+		String recommendedPath = Property.getInstance().WORK_DIR + Property.getInstance().separator + "recommended";
+		File resultDir = new File(recommendedPath);
+		if (!resultDir.exists()) 
+			resultDir.mkdirs();
+		
 		//result output file
 		String outputFileName = Property.getInstance().OUTPUT_FILE;
-		writer = new FileWriter(outputFileName, false);
+		writer = new FileWriter(outputFileName, false); 
 		
 		//calculation
 		for (int i = 0; i < bugs.size(); i++) {
@@ -200,7 +233,10 @@ public class Evaluator {
     				continue;
     			}
     			
+    			printAllResults(recommendedPath, bugID, rankedValues);
+    			
         		calculate(bugID, rankedValues, answerFiles);
+        		
         	} catch (Exception e) {
         		e.printStackTrace();
         	}

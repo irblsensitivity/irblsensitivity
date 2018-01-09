@@ -1,6 +1,7 @@
 package org.amalgam.evaluate;
 
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
@@ -52,8 +53,15 @@ public class Evaluation {
 	 * @throws IOException 
 	 */
 	public int makeTopKResult(HashMap<String, Bug> bugobjs) throws IOException{
+		String recommendedPath =  Property.getInstance().WorkDir + File.separator + "recommended" + File.separator;
+		File dir = new File(recommendedPath);
+		if (!dir.exists()) dir.mkdirs();
+				
 		BufferedWriter writer = new BufferedWriter(new FileWriter(Property.getInstance().OutputFile));
+		
 		for(Bug b : bugobjs.values()){
+			BufferedWriter fullWriter = new BufferedWriter(new FileWriter(recommendedPath + b.ID + ".txt"));
+			
 			int local_top1=0;
 			int local_top5=0;
 			int local_top10=0;
@@ -63,13 +71,16 @@ public class Evaluation {
 				SimpleEntry<Integer, Double> item = b.results.get(rank);
 				String fileName = FileObjs.get(item.getKey());
 				Double score = item.getValue();
+				fullWriter.write(rank + "\t" + score + "\t" + fileName + "\n");
+				
 				if(!b.groundtruth.containsKey(fileName)) continue;
-
 				writer.write(b.ID + "\t" + fileName + "\t" + rank + "\t" + score + "\n");
 				if (rank < 1) local_top1++;
 				if (rank < 5) local_top5++;
 				if (rank <10) local_top10++;
 			}
+			fullWriter.close();
+			
 			if (local_top1 >0 ) top1++;
 			if (local_top5 >0 ) top5++;
 			if (local_top10 >0 ) top10++;

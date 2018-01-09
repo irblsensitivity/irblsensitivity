@@ -11,6 +11,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.attribute.FileAttribute;
 import java.nio.file.attribute.PosixFilePermissions;
+import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.Set;
 import java.util.TreeSet;
@@ -66,10 +67,13 @@ public class Evaluation {
 		{ 
 			//추천결과 정보 로드
 			Hashtable<Integer, Rank> recommends = results.get(bugID);
-
+			
+			ArrayList<Rank> recommendsList = new ArrayList<Rank>(recommends.values());
+			recommendsList.sort((Rank o1, Rank o2)->o1.rank-o2.rank);	// order of rank in ASC
+			
 			//추천결과 출력
 			FileWriter writer = new FileWriter(recommendedPath + bugID + ".txt");
-			for (Rank rank : recommends.values()) {
+			for (Rank rank : recommendsList) {
 				if(nameTable.containsKey(rank.fileID)) {
 					writer.write(rank.rank  + "\t" +rank.score + "\t" + nameTable.get(rank.fileID) + this.lineSparator);
 				}
@@ -125,8 +129,9 @@ public class Evaluation {
 			//find File ID
 			int fid = 0;
 			if (!idTable.containsKey(filename)){
-				fid = fileIndex;
-				idTable.put(filename, fileIndex++);				
+				fid = fileIndex++;
+				idTable.put(filename, fid);				
+				nameTable.put(fid, filename);
 			}
 			else
 				fid = idTable.get(filename);
