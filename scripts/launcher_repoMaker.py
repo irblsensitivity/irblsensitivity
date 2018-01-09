@@ -5,12 +5,28 @@ import shutil
 from commons import Subjects
 from repository import BugRepositoryMaker
 
+########################################################################################
+
+def getargs():
+	import argparse
+	parser = argparse.ArgumentParser(description='')
+	parser.add_argument('-p', dest='project', default=None, help='A specific project name what you want to work.')
+	parser.add_argument('-g', dest='group', default=None, help='A specific group name what you want to work.')
+	parser.add_argument('-c', dest='isClean', default=False, type=bool, help='work option: clean or process')
+
+	args = parser.parse_args()
+
+	if args.isClean is None:
+		parser.print_help()
+		return None
+	return args
+
 
 #clean
-def clean():
+def clean(_sGroup=None, _sProject=None):
 	S = Subjects()
-	for group in S.groups:
-		for project in S.projects[group]:
+	for group in (S.groups if _sGroup is None else [_sGroup]):
+		for project in (S.projects[group] if _sProject is None else [_sProject]):
 			print(u'cleanning %s / %s ' % (group, project))
 			dirpath = os.path.join(S.getPath_bugrepo(group, project), u'repository')
 			fullrepo = os.path.join(S.getPath_bugrepo(group, project), u'repository_full.xml')
@@ -29,17 +45,24 @@ def clean():
 				print(u'Failed to remove filtered repository file')
 	pass
 
+def work(_sGroup=None, _sProject=None):
 
-def work():
 	S = Subjects()
-	for group in S.groups: # ['JBoss']:#'['Apache', 'JBoss', 'Wildfly',  'Spring']:#
-		for project in S.projects[group]:
+	for group in (S.groups if _sGroup is None else [_sGroup]):
+		for project in (S.projects[group] if _sProject is None else [_sProject]):
 			obj = BugRepositoryMaker(project,
 			                         S.getPath_bugrepo(group, project),
 			                         S.getPath_gitrepo(group, project),
 			                         S.getPath_bugrepo(group, project))
 			obj.run(S.versions[project].keys())
 
-#clean()
-work()
-pass
+if __name__ == '__main__':
+	args = getargs()
+	if args is None:
+		exit(1)
+
+	if args.isClean is True:
+		clean(args.group, args.project)
+	else:
+		work(args.group, args.project)
+	pass
