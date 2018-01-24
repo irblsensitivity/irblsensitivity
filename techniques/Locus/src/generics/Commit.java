@@ -90,14 +90,15 @@ public class Commit {
 //		System.out.println(files.size());
 		List<String> filteredFiles = new ArrayList<String>();
 		for (int i = 0; i < files.size(); i++) {
-			if (!files.get(i).contains("test")) {
+			// 2018-01-19 :: removed for including test files.
+			//if (!files.get(i).contains("test")) {
 				if (files.get(i).lastIndexOf(".") > 0) {
 					String type = files.get(i).substring(files.get(i).lastIndexOf("."));
 //					System.out.println(type);
 					if (isValid(type)) 
 						filteredFiles.add(files.get(i));
 				}
-			}
+			//}
 		}
 		files.clear();
 		files = filteredFiles;

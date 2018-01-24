@@ -171,7 +171,8 @@ public class ExtractCodeLikeTerms {
 		List<String> lines = FileListUnderDirectory.getFileListUnder(main.Main.sourceDir, ".java");
 		HashSet<String> codeLikeTermCorpus = new HashSet<String>();
 		for (String line : lines) {
-			if (line.contains("test") || line.contains("Test")) continue;
+			// 2018-01-19 :: removed for including test files.
+			//if (line.contains("test") || line.contains("Test")) continue;
 			String[] tmp = line.split("/");
 			tmp = tmp[1].split("/");
 			for (String term : tmp) {

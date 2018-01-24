@@ -348,7 +348,8 @@ public class CorpusCreation {
     			className = className.replace("\\", ".");
     			className = className.replace("..", ".");
     			String[] clts = className.split("\\.");
-    			if (!loc.toLowerCase().contains("zxing") && className.toLowerCase().contains("test")) continue;
+    			// 2018-01-19 :: removed for including test files.
+    			//if (!loc.toLowerCase().contains("zxing") && className.toLowerCase().contains("test")) continue;
     			String prefix = main.Main.settings.get("sourceDir").replace("/", ".");
     			prefix = prefix.replace("\\", ".");
     			prefix = prefix.replace("..", ".");
@@ -367,7 +368,8 @@ public class CorpusCreation {
     					allCodeTermsHashSet.add(tmp2);
     				}
     			}
-    			if (className.toLowerCase().contains("test")) continue;
+    			// 2018-01-19 :: removed for including test files.
+    			//if (className.toLowerCase().contains("test")) continue;
     			HashSet<String> codeElements = ExtractCodeElementsFromSourceFile.extractCodeElements(files.get(i));
     			allCodeTermsHashSet.addAll(codeElements);
     		}
