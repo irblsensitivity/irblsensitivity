@@ -14,6 +14,9 @@ import utils.WriteLinesToFile;
 import generics.Bug;
 import generics.Pair;
 import utils.FileToLines;
+import java.util.Date;
+import java.text.SimpleDateFormat;
+
 
 public class ObtainVSMScore {
 	public String loc = main.Main.settings.get("workingLoc");
@@ -180,7 +183,7 @@ public class ObtainVSMScore {
 			newHunkIndex.add(hid);
 		}
 		
-		//System.out.println("new hunk size:\t" + newHunkIndex.size());
+		//System.out.println("\t\t["+getTimeString()+"][new hunk size:\t" + newHunkIndex.size());
 		
 		for (String term : newTerms) {
 			corpusNL.add(term);
@@ -428,6 +431,13 @@ public class ObtainVSMScore {
 		return r;
 	}
 	
+	public String getTimeString() {
+		long time = System.currentTimeMillis(); 
+		SimpleDateFormat dayTime = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
+		String str = dayTime.format(new Date(time));
+		return str;
+	}
+	
 	public HashMap<Integer, HashMap<String, Double>> getResults(boolean isChangeLevel) {
 		List<String> linesNL = new ArrayList<String>();
 		List<String> linesCLT = new ArrayList<String>();
@@ -447,7 +457,7 @@ public class ObtainVSMScore {
 		int count = 0;
 		int percent = 0;
 		int max = bugRank.size();
-		System.out.println("Calculating scores...");
+		System.out.println("Calculating scores for "+bugRank.size()+" bugs...");
 		for (int b = 0; b < bugRank.size(); b++) {
 			count++;
 			
@@ -462,39 +472,48 @@ public class ObtainVSMScore {
 			List<Integer> NLHunksList = new ArrayList<Integer>(hunks);
 			List<Integer> CLTHunksList = new ArrayList<Integer>(hunks);
 			
+			//Calculated Score
 			updateCorpusNL(NLHunksList, isChangeLevel);
 			HashMap<Integer,Double> resultNL = getVSMScoreNL(bug,NLHunksList,isChangeLevel);
 			HashMap<Integer,Double> resultCLT = getVSMScoreCLT(bug,CLTHunksList,isChangeLevel);
-			String line = "" + bug.id;
-			for (int hid : resultNL.keySet()) {
-				line += "\t" + hid + ":" + resultNL.get(hid);
-			}
-			linesNL.add(line);
-			//System.out.println("["+ count + "/"+ bugRank.size() +"] linesNL added: "+ line);
 			
-			line = "" + bug.id;
+			//Convert HashMap to line text by using StringBuilder // 2018-01-28 modified
+			StringBuilder buffer = new StringBuilder();
+			buffer.append(bug.id);
+			for (int hid : resultNL.keySet()) {
+				buffer.append("\t").append(hid).append(":").append(resultNL.get(hid));				
+			}			
+			linesNL.add(buffer.toString());
+			
+			//Convert HashMap to line text by using StringBuilder // 2018-01-28 modified
+			buffer = new StringBuilder();
+			buffer.append(bug.id);
 			for (int hid : resultCLT.keySet()) {
-				line += "\t" + hid + ":" + resultCLT.get(hid);
-			}
-			linesCLT.add(line);
-			//System.out.println("["+ count + "/"+ bugRank.size() +"] linesCLT added: "+ line);
+				buffer.append("\t").append(hid).append(":").append(resultCLT.get(hid));				
+			}			
+			linesCLT.add(buffer.toString());
+			
+			//System.out.println("\t\t["+getTimeString()+"]["+ count + "/"+ bugRank.size() +"] linesCLT added: ");
 			
 			double bugCLTWeight = lambda * bugCLTIndex.get(bid).size() * 1.0 / bugTermList.get(bid).size();
 			if (bugCLTWeight > 1) bugCLTWeight = 1;
-			//System.out.println("["+ count + "/"+ bugRank.size() +"] weighting out: "+ line);
+			
+			//System.out.println("\t\t["+getTimeString()+"]["+ count + "/"+ bugRank.size() +"] weighting out: ");
 			
 			HashMap<String,Double> entitySimisNL = getRankingResults(resultNL, isChangeLevel);
 			HashMap<String,Double> entitySimisCLT = getRankingResults(resultCLT, isChangeLevel);			
 			HashMap<String, Double> result = combineResults(entitySimisNL, entitySimisCLT, bugCLTWeight);			
 
-			line = "" + bug.id;
+			//Convert map into the line text (using StringBuilder)  // 2018-01-28
+			buffer = new StringBuilder();
+			buffer.append(bug.id);
 			for (String entity : result.keySet()) {
-				line += "\t" + entity + ":" + result.get(entity);
+				buffer.append("\t").append(entity).append(":").append(result.get(entity));				
 			}
-			//System.out.println("["+ count + "/"+ bugRank.size() +"] entity checked: "+ line);
-			combineResults.add(line);
+			combineResults.add(buffer.toString());
+			
+			//add the result 
 			bugChangeResults.put(bid, result);
-			//System.out.println("["+ count + "/"+ bugRank.size() +"] combineResults added: "+ line);
 			
 			//show progress
 			int newpercent = (int)((count*100) / (double)max);					
