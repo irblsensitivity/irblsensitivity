@@ -194,7 +194,6 @@ public class ProduceFileLevelResults {
 		List<List<Integer>> ranks = new ArrayList<List<Integer>>();
 		List<String> resultsLines = new ArrayList<String>();
 		List<String> rawRanks = new ArrayList<String>();
-		List<String> fullRanks = new ArrayList<String>();
 		
 		double belta1 = Main.belta1;
 		if (loc.toLowerCase().contains("zxing"))
@@ -236,6 +235,7 @@ public class ProduceFileLevelResults {
 			Collections.sort(finalRanks, Collections.reverseOrder());
 			List<Integer> rank = new ArrayList<Integer>();
 			HashSet<Integer> ansFileIndices = bugRelatedFiles.get(bid);
+			List<String> fullRanks = new ArrayList<String>();
 			
 			for (int r = 0; r < finalRanks.size(); r++) {
 				int sid = finalRanks.get(r).getKey();
