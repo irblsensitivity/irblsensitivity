@@ -170,6 +170,9 @@ class Subjects(object):
 	def getPath_results(self, _type, _tech, _group, _project, _version):
 		return os.path.join(self.root_result, _type, _group, _project, u'%s_%s_%s_output.txt'%(_tech, _project, _version))
 
+	def getPath_result_folder(self, _type, _group, _project):
+		return os.path.join(self.root_result, _type, _group, _project)
+
 	def getPath_featurebase(self, _group, _project):
 		return os.path.join(self.root_feature, _group, _project)
 
