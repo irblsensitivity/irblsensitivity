@@ -2,6 +2,9 @@
 from __future__ import print_function
 from commons import Subjects
 from repository import GitInflator
+import os, stat
+import shutil
+
 
 urls={
 	'HBASE':u'https://github.com/apache/hbase.git',
@@ -58,23 +61,26 @@ urls={
 }
 
 # Make works
-import os, stat
 def del_rw(action, name, exc):
 	os.chmod(name, stat.S_IWRITE)
 	os.remove(name)
 
-def make():
+def make(_sGroup=None, _sProject=None):
 	S = Subjects()
 	for group in S.groups:
+		if _sGroup is not None and group != _sGroup: continue
 		for project in S.projects[group]:
+			if _sProject is not None and project != _sProject: continue
 			git = GitInflator(project, urls[project], S.getPath_base(group, project))
 			git.inflate(S.versions[project])  # The items in versions is git tag name map with each version.
 
-import shutil
-def clear():
+
+def clear(_sGroup=None, _sProject=None):
 	S = Subjects()
 	for group in S.groups:
+		if _sGroup is not None and group != _sGroup: continue
 		for project in S.projects[group]:
+			if _sProject is not None and project != _sProject: continue
 			target = S.getPath_source(group, project)
 			try:
 				shutil.rmtree(target, onerror=del_rw)
@@ -82,6 +88,29 @@ def clear():
 			except Exception as e:
 				print(u'failed to remove : %s' %target)
 
-#clear()
-make()
 
+
+def getargs():
+	import argparse
+	parser = argparse.ArgumentParser(description='')
+	parser.add_argument('-p', dest='project', default=None, help='A specific project name what you want to work.')
+	parser.add_argument('-g', dest='group', default=None, help='A specific group name what you want to work.')
+	parser.add_argument('-c', dest='isClean', default=False, type=bool, help='work option: clean or process')
+
+	args = parser.parse_args()
+
+	if args.isClean is None:
+		parser.print_help()
+		return None
+	return args
+
+if __name__ == '__main__':
+	args = getargs()
+	if args is None:
+		exit(1)
+
+	if args.isClean is True:
+		clear(args.group, args.project)
+	else:
+		make(args.group, args.project)
+	pass
