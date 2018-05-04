@@ -1,5 +1,5 @@
 # Overview
-This repository shares data and code used for paper titled "Sensitivity Analysis of IR-based Bug Localization Techniques". 
+This repository shares data and code used for paper titled "IR-based Bug Localization: Reproducibility Study on thePerformance of State-of-the-Art Approaches" 
 
 
 ### Repository Description
